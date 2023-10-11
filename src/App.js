@@ -1,5 +1,5 @@
 import './App.css';
-import React, {Component, Suspense} from 'react';
+import React, {Component} from 'react';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Contact from './components/Contact/Contact';
 import FooterContainer from './components/Footer/FooterContainer';
@@ -48,9 +48,9 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    //initialized: state.app.initialized
-})
+// const mapStateToProps = (state) => ({
+//     //initialized: state.app.initialized
+// })
 
 //compose(
 //withRouter,
@@ -59,7 +59,7 @@ const mapStateToProps = (state) => ({
 //<MarineUpholstery data={props.state.homeServicesPage}/>
 //<ImageSlider data={props.state.homeServicesPage} dispatch={props.dispatch} />
 
-let AppContainer = App;
+// let AppContainer = App;
 
 // const SamuraiJSApp = (props) => {
 //     <BrowserRouter>

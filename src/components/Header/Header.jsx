@@ -5,10 +5,10 @@ import {NavLink} from "react-router-dom";
 
 const Header = (props) => {
 
-    const scrollToSection = (id) => {
-        const section = document.getElementById(id);
-        section.scrollIntoView({behavior: 'smooth'});
-    };
+    // const scrollToSection = (id) => {
+    //     const section = document.getElementById(id);
+    //     section.scrollIntoView({behavior: 'smooth'});
+    // };
 
     return (
         <header className={styleCSS.header}>
@@ -58,9 +58,8 @@ const Header = (props) => {
 
 export default Header;
 
-{/* <img src="images/background_0.jpg" className={styleCSS.imageHeader} />
+/* <img src="images/background_0.jpg" className={styleCSS.imageHeader} />
 
 <div className={styleCSS.textHeader}>
     <h1>{state.name}</h1>
 </div> */
-}
