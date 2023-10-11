@@ -1,0 +1,40 @@
+.footer {
+  grid-area: footer;
+  background-color: gray;
+  text-align: center;
+  font-size: 12px;
+}
+
+.gridFooter {
+  display: grid;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+
+  grid-template-areas:
+    "dateCopiright nameFirma emailFirma telephoneFirma";
+
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 0px;
+}
+
+.dateCopiright {
+  grid-area: dateCopiright;
+}
+
+.nameFirma {
+  grid-area: nameFirma;
+}
+
+.emailFirma {
+  grid-area: emailFirma;
+}
+
+.telephoneFirma {
+  grid-area: telephoneFirma;
+}
+
+a {
+  color:#000;
+}

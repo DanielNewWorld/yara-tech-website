@@ -1,0 +1,25 @@
+.contactUS {
+    grid-area: contact;
+    width: 70%;
+    margin: 0 auto;
+    background-color:white;
+  }
+
+form input,
+form textarea,
+form button {
+  display: block;
+  margin-bottom: 10px;
+  width: 50%;
+  margin-left:25%;
+}
+
+form button {
+    background-color:gray;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 10px;
+  }
+

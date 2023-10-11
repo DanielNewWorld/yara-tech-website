@@ -1,0 +1,44 @@
+.gridServiceItem {
+  display: block;
+  justify-content:space-between;
+  align-items: stretch; 
+  position: relative;
+  margin: 0;
+  padding: 0;
+  }
+
+  .imgItem {
+    position: relative; 
+    margin: 0px auto auto auto;
+    width: 100%;
+    height: 75vh;
+    object-fit: cover;
+  }
+
+  .desriptionItem {
+    background-color: rgba(95, 158, 160, 0.5);
+    width: 100%;
+    height: 99.5%; 
+    position: absolute;
+    top: 0px;
+  }
+
+  .desriptionContents {
+    text-align: center;
+    margin: 100px auto;
+    width: auto; 
+    display: block;
+  }
+
+  .button {
+    position:absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 10px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }

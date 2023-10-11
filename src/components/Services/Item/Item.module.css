@@ -1,0 +1,9 @@
+.item {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .item img {
+    width: 300px;
+    height: auto;
+  }
