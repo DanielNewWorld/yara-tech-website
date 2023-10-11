@@ -1,5 +1,3 @@
-let img = "../images/1.jpg";
-
 let initialState = {
     itemProductData: [
         {
