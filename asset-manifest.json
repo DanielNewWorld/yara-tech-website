@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/DanielNewWorld/yara-tech-website.git/static/css/main.be6870c6.css",
-    "main.js": "/DanielNewWorld/yara-tech-website.git/static/js/main.91f342b1.js",
+    "main.js": "/DanielNewWorld/yara-tech-website.git/static/js/main.daef0a66.js",
     "static/js/787.c94c709c.chunk.js": "/DanielNewWorld/yara-tech-website.git/static/js/787.c94c709c.chunk.js",
     "static/media/3.jpg": "/DanielNewWorld/yara-tech-website.git/static/media/3.8b25cf75029ab6f3d477.jpg",
     "static/media/1.jpg": "/DanielNewWorld/yara-tech-website.git/static/media/1.e15964f50022bace62d6.jpg",
@@ -11,11 +11,11 @@
     "static/media/images.png": "/DanielNewWorld/yara-tech-website.git/static/media/images.aae46158125627785b2f.png",
     "index.html": "/DanielNewWorld/yara-tech-website.git/index.html",
     "main.be6870c6.css.map": "/DanielNewWorld/yara-tech-website.git/static/css/main.be6870c6.css.map",
-    "main.91f342b1.js.map": "/DanielNewWorld/yara-tech-website.git/static/js/main.91f342b1.js.map",
+    "main.daef0a66.js.map": "/DanielNewWorld/yara-tech-website.git/static/js/main.daef0a66.js.map",
     "787.c94c709c.chunk.js.map": "/DanielNewWorld/yara-tech-website.git/static/js/787.c94c709c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.be6870c6.css",
-    "static/js/main.91f342b1.js"
+    "static/js/main.daef0a66.js"
   ]
 }
