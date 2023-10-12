@@ -1,7 +1,7 @@
 {
   "name": "yara_tech_llc",
   "version": "0.1.0",
-  "homepage": "https://github.com/rovshenklichev/yara-tech-website.git",
+  "homepage": "https://github.com/DanielNewWorld/yara-tech-website.git",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
