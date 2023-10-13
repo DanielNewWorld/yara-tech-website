@@ -2,8 +2,8 @@ const TOGGLE_IS_MOBILE = 'TOGGLE_IS_MOBILE';
 
 let initialState = {
     name: "YARA TECH LLC",
-    telephone: "470-922-8060",
-    email: "yaratechllc@gmail.com",
+    telephone: "503-933-4923",
+    email: "yaratechsoftware@gmail.com",
     isMobile: window.innerWidth <= 768 // Значение ширины для определения мобильного устройства
 }
 
