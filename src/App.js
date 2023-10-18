@@ -7,6 +7,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import {Route, Routes} from "react-router-dom";
 import Content from "./components/Content/Content";
 import Services from "./components/Services/Services";
+import Login from "./components/Login/Login";
 
 //const UsersContainer = React.lazy(() => import("./components/Users/UserContainer"));
 
@@ -38,9 +39,9 @@ class App extends Component {
                     <Route path='/services' element={<Services/>}/>
                     <Route path='/contact' element={<Contact/>}/>
                     <Route path='/about' element={<AboutUs/>}/>
+                    <Route path='/signin' element={<Login/>}/>
                 </Routes>
                 <FooterContainer/>
-                {/*<Login/>*/}
                 {/*<Suspense fallback={<div><Preloader/></div>}>*/}
                 {/*    <UsersContainer/>*/}
                 {/*</Suspense>*/}

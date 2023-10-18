@@ -4,50 +4,46 @@ import styleCSS from './Content.module.css';
 const Content = () => {
     return (
         <div className={styleCSS.content}>
-            <h1>Yara Tech QA Manual and Automation Services.</h1>
-            <h3>Expertise in Web Application and Mobile Testing for Software Quality Assurance</h3>
-            <h2>Testing Proficiency:</h2>
-            <ul>
-                <h3>
-                    <li>Skilled in both Manual and Automation Testing, with 4-5 years of hands-on experience in each
-                        domain.
-                    </li>
-                    <li>Proficient in utilizing automation tools such as Selenium with Java and WebdriverIO with
-                        TypeScript to automate test scenarios, enhancing efficiency and accuracy.
-                    </li>
-                </h3>
-            </ul>
+            <h1>Software Testing Services Yara Tech</h1>
+            <h2>Functional Testing:</h2>
+            <h3>Verify that the software meets the specified functional requirements and works as expected.</h3>
 
-            <h2>Adaptive Testing Strategies:</h2>
-            <h3>Well-versed in various Software Development Life Cycle (SDLC) methodologies, including Waterfall and Agile models, enabling flexible adaptation of testing strategies to project requirements.</h3>
+            <h2>Regression Testing:</h2>
+            <h3>Ensure that changes or updates to the software haven't introduced new defects or affected existing functionality.</h3>
 
-            <h2>Customer-Centric Approach:</h2>
-            <h3>Leveraging 12 years of extensive Customer Service experience to provide exceptional support and deeply understand client requirements.</h3>
+            <h2>Performance Testing:</h2>
+            <h3>Evaluate the software's performance under various workloads and stress conditions to identify bottlenecks and optimize its speed and scalability.</h3>
 
-            <h2>Thorough Requirement Analysis:</h2>
-            <h3>Extensive experience in working with requirements, performing meticulous analysis, and ensuring comprehensive test coverage to minimize risks.</h3>
+            <h2>Usability Testing:</h2>
+            <h3>Evaluate the software's user interface (UI) and user experience (UX) to ensure it is intuitive, easy to navigate, and meets the needs of the target audience.</h3>
 
-            <h2>Robust Test Documentation:</h2>
-            <h3>Proficient in creating comprehensive test documentation, including meticulous test plans, precise test cases, well-structured test scripts, and detailed bug reports to maintain transparency and traceability.</h3>
+            <h2>Compatibility Testing:</h2>
+            <h3>Verify that the software works correctly on different platforms, browsers, operating systems, and devices, ensuring a seamless user experience across various environments.</h3>
 
-            <h2>Effective Communication:</h2>
-            <h3>Strong communication skills facilitate seamless collaboration with cross-functional teams, ensuring alignment and successful project outcomes.</h3>
+            <h2>Localization Testing:</h2>
+            <h3>Validate the software's adaptability to different languages (English, Ukrainian, Russian), cultures, and regions, ensuring accurate translation, date formats, and localized content.</h3>
 
-            <h2>Comprehensive Services</h2>
-            <h3>We offer a wide range of services to meet your QA needs:
-            <ul>
-                <li>Test planning and execution</li>
-                <li>Defect management</li>
-                <li>Test Automation with expertise in Automation frameworks using TypeScript, JavaScript, Java, and Python</li>
-                <li>Utilization of Tools like Selenium, WebdriverIO, Cypress, and Playwright for automation</li>
-                <li>Manual Testing</li>
-                <li>API Testing and Automation</li>
-                <li>Continuous integration</li>
-                <li>Performance testing</li>
-                <li>Detailed and insightful reporting</li>
-            </ul>
-            </h3>
-            <h3>At Yara Tech, we are dedicated to ensuring the quality and functionality of your software products, adapting to your project's unique requirements and delivering exceptional service.</h3>
+            <h2>Accessibility Testing:</h2>
+            <h3>Ensure the software is accessible to users with disabilities, complying with accessibility standards, such as WCAG (Web Content Accessibility Guidelines).</h3>
+
+            <h2>Mobile App Testing:</h2>
+            <h3>Test mobile applications across different devices, screen resolutions, and operating systems to ensure they function properly and provide an optimal user experience.</h3>
+
+            <h2>Test Automation: </h2>
+            <h3>Develop and implement automated testing frameworks, scripts, and tools to improve testing efficiency, reduce time-to-market, and enhance test coverage.</h3>
+
+            <h2>Test Documentation:</h2>
+            <h3>Create comprehensive test plans, test cases, and test reports that document the testing process, results, and any defects found.</h3>
+
+            <h2>Continuous Integration and Continuous Delivery (CI/CD) Testing:</h2>
+            <h3>Integrate testing into the CI/CD pipeline to ensure rapid and reliable software releases with automated testing at each stage.</h3>
+
+            <h2>Exploratory Testing:</h2>
+            <h3>Conduct ad-hoc testing, exploring the software to discover new defects, usability issues, and edge cases that may have been missed during structured testing.</h3>
+
+            <h2>API Testing:</h2>
+            <h3>Validate the functionality, reliability, and security of application programming interfaces (APIs) to ensure seamless integration between software components.</h3>
+
         </div>
     );
 };
