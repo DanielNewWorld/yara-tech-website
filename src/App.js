@@ -6,6 +6,7 @@ import FooterContainer from './components/Footer/FooterContainer';
 import AboutUs from './components/AboutUs/AboutUs';
 import {Route, Routes} from "react-router-dom";
 import Content from "./components/Content/Content";
+import Services from "./components/Services/Services";
 
 //const UsersContainer = React.lazy(() => import("./components/Users/UserContainer"));
 
@@ -34,7 +35,7 @@ class App extends Component {
                 <HeaderContainer/>
                 <Routes>
                     <Route path='/' element={<Content/>}/>
-                    {/*<Route path='/about' render={() => <AboutUs/>}/>*/}
+                    <Route path='/services' element={<Services/>}/>
                     <Route path='/contact' element={<Contact/>}/>
                     <Route path='/about' element={<AboutUs/>}/>
                 </Routes>

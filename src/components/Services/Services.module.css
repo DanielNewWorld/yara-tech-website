@@ -1,0 +1,13 @@
+.services {
+    margin: 0 auto;
+    background-color:green;
+    height: 100%;
+  }
+
+@media screen and (max-width:768px) {
+    .services {
+        width: 90%;
+        margin: 0 auto;
+        background-color:green;
+    }
+}
