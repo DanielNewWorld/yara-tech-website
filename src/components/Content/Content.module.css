@@ -1,15 +1,15 @@
-.aboutUs {
+.content {
     grid-area: aboutUs;
-    width: 50%;
     margin: 0 auto;
     background-color:green;
+    height: 100%;
   }
 
 @media screen and (max-width:768px) {
-    .aboutUs {
+    .content {
         grid-area: aboutUs;
         width: 90%;
         margin: 0 auto;
-        background-color:white;
+        background-color:green;
     }
 }

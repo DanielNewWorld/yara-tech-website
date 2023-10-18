@@ -4,8 +4,8 @@ import HeaderContainer from './components/Header/HeaderContainer';
 import Contact from './components/Contact/Contact';
 import FooterContainer from './components/Footer/FooterContainer';
 import AboutUs from './components/AboutUs/AboutUs';
-import ImageSliderContainer from './components/ImageSlider/ImageSliderContainer';
 import {Route, Routes} from "react-router-dom";
+import Content from "./components/Content/Content";
 
 //const UsersContainer = React.lazy(() => import("./components/Users/UserContainer"));
 
@@ -30,10 +30,10 @@ class App extends Component {
         // }
 
         return (
-            <div className='gridApp' id="home">
+            <div className='gridApp'>
                 <HeaderContainer/>
                 <Routes>
-                    <Route path='/' element={<ImageSliderContainer/>}/>
+                    <Route path='/' element={<Content/>}/>
                     {/*<Route path='/about' render={() => <AboutUs/>}/>*/}
                     <Route path='/contact' element={<Contact/>}/>
                     <Route path='/about' element={<AboutUs/>}/>
