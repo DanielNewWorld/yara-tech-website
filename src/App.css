@@ -14,25 +14,3 @@ body {
     padding: 0;
     background-color: green;
 }
-
-h1 {
-    margin: 0;
-    text-align: center;
-}
-
-h2 {
-    margin-left: 10px;
-}
-
-h3 {
-    margin-left: 10px;
-}
-
-ul {
-    list-style-type: disc; /* type marker */
-    margin-left: 20px;
-}
-
-ul li {
-    margin: 5px 0;
-}

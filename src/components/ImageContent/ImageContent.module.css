@@ -1,0 +1,18 @@
+.imagecontent {
+    margin: 0 auto;
+    background-color:green;
+    height: 100%;
+  }
+
+@media screen and (max-width:768px) {
+    .imagecontent {
+        grid-area: aboutUs;
+        width: 90%;
+        margin: 0 auto;
+        background-color:green;
+    }
+}
+
+.imgItem {
+    width: 120%;
+}

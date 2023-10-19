@@ -1,9 +1,31 @@
 .content {
-    grid-area: aboutUs;
-    margin: 0 auto;
+    margin-left: 50px;
+    margin-right: 50px;
     background-color:green;
     height: 100%;
+
+    display: grid;
+    justify-content:center;
+    align-items: center;
+    position: relative;
+
+    grid-template-areas:
+    "content_Text"
+    "content_Image";
+
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    grid-gap: 0px;
   }
+
+.contentText{
+    grid-area: content_Text;
+    align-items: center;
+}
+
+.contentImage {
+    grid-area: content_Image;
+}
 
 @media screen and (max-width:768px) {
     .content {
@@ -12,4 +34,32 @@
         margin: 0 auto;
         background-color:green;
     }
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 300%;
+}
+
+h2 {
+    margin-left: 100px;
+    margin-right: 100px;
+    text-align: center;
+    font-size: 250%;
+}
+
+h3 {
+    margin-left: 10px;
+    text-align: center;
+    font-size: 200%;
+}
+
+ul {
+    list-style-type: disc; /* type marker */
+    margin-left: 20px;
+}
+
+ul li {
+    margin: 5px 0;
 }

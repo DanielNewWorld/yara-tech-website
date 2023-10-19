@@ -6,19 +6,19 @@ const Footer = (props) => {
         <div className={styleCSS.footer}>
             <div className={styleCSS.gridFooter}>
                 <div className={styleCSS.dateCopiright}>
-                    <h3>2023</h3>
+                    2023
                 </div>
 
                 <div className={styleCSS.nameFirma}>
-                    <h3>{props.data.name}</h3>
+                    {props.data.name}
                 </div>
 
                 <div className={styleCSS.emailFirma}>
-                    <h3><a href={`mailto:${props.data.email}`}>Email Us!</a></h3>
+                    <a href={`mailto:${props.data.email}`}>Email Us!</a>
                 </div>
 
                 <div className={styleCSS.telephoneFirma}>
-                    <h3>{props.data.telephone}</h3>
+                    {props.data.telephone}
                 </div>
             </div>
         </div>
