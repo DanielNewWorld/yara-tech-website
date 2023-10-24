@@ -5,8 +5,6 @@ import image2 from '../../images/2.jpg';
 import image3 from '../../images/3.jpg';
 import image4 from '../../images/4.jpg';
 import image5 from '../../images/5.jpg';
-import AboutUs from "../AboutUs/AboutUs";
-import {Route, Routes} from "react-router-dom";
 
 const ImageSlider = (props) => {
 
@@ -20,11 +18,6 @@ const ImageSlider = (props) => {
 
     return () => clearInterval(interval);
   }, [props.data.length]);
-
-  const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    section.scrollIntoView({ behavior: 'smooth' });
-  };
 
   switch (currentImage) {
     case 0:
