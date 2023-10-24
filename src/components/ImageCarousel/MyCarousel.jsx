@@ -12,14 +12,25 @@ const MyCarousel = () => {
     return (
         <Carousel showArrows={true}>
             <div>
-                <img src={image1} alt="Image 1" className={styleCSS.imgItem}/>
+                <img src={image1} alt="1" className={styleCSS.imgItem}/>
                 <p className="legend">Описание 1</p>
             </div>
             <div>
-                <img src={image2} alt="Image 2" />
+                <img src={image2} alt="2" />
                 <p className="legend">Описание 2</p>
             </div>
-            {/* Добавьте больше слайдов, если это необходимо */}
+            <div>
+                <img src={image3} alt="3" />
+                <p className="legend">Описание 2</p>
+            </div>
+            <div>
+                <img src={image4} alt="4" />
+                <p className="legend">Описание 2</p>
+            </div>
+            <div>
+                <img src={image5} alt="5" />
+                <p className="legend">Описание 2</p>
+            </div>
         </Carousel>
     );
 };
