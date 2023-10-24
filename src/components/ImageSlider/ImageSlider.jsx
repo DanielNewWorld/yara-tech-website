@@ -14,7 +14,7 @@ const ImageSlider = (props) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % props.data.length);
-    }, 2000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [props.data.length]);
@@ -41,7 +41,7 @@ const ImageSlider = (props) => {
 
   return (
     <section className={styleCSS.gridServiceItem}>
-    <div className={styleCSS.serviceItem}>
+    <div>
       {/*<img className={styleCSS.imgItem} src={props.data[currentImage].imgSrc} alt={`Image ${currentImage}`} />*/}
       <img className={styleCSS.imgItem} src={image} alt={`I ${currentImage}`} />
       <div className={styleCSS.desriptionItem}>

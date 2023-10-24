@@ -29,18 +29,22 @@
 
 .dateCopiright {
   grid-area: dateCopiright;
+  text-shadow: 2px 2px 4px #00FF00; /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
 }
 
 .nameFirma {
   grid-area: nameFirma;
+  text-shadow: 2px 2px 4px #00FF00; /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
 }
 
 .emailFirma {
   grid-area: emailFirma;
+  text-shadow: 2px 2px 4px #00FF00; /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
 }
 
 .telephoneFirma {
   grid-area: telephoneFirma;
+  text-shadow: 2px 2px 4px #00FF00; /* горизонтальное смещение, вертикальное смещение, размытие, цвет */
 }
 
 a {

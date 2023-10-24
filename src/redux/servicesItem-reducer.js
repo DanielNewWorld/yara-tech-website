@@ -4,7 +4,7 @@ let initialState = {
             id: 1,
             imgSrc: "1.jpg",
             nameItem: "service 1",
-            description: "Functional Testing: Ensuring that all website functions and features work correctly. This includes testing all interactive elements, forms, buttons, links, and other functional components."
+            description: "Welcome to Yara Tech - Your Partner in Quality Assurance"
         },
         {
             id: 2,

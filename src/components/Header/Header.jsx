@@ -23,9 +23,9 @@ const Header = (props) => {
                     {props.data.isMobile ? (null) :
                         (
                             <nav className={styleCSS.menuLine}>
-                                <div><a href="/">
+                                <div><NavLink to="/">
                                     <img alt="" src={logo} className={styleCSS.logo}/>
-                                </a></div>
+                                </NavLink></div>
                                 <div className={styleCSS.menuItem}>
                                     <NavLink to="/services" activeClassName={styleCSS.activeLink}>Services</NavLink>
                                 </div>
