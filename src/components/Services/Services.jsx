@@ -4,7 +4,7 @@ import styleCSS from './Services.module.css';
 const Services = () => {
     return (
         <div className={styleCSS.services}>
-            <h1>Yara Tech QA Manual and Automation Services.</h1>
+            <h1>QA Manual and Automation Services.</h1>
             <h3>Expertise in Web Application and Mobile Testing for Software Quality Assurance</h3>
             <h2>Testing Proficiency:</h2>
             <ul>

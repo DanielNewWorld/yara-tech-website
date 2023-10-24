@@ -11,7 +11,7 @@ import image7 from '../../images/accessibility-testing.png';
 const Content = () => {
     return (
         <div>
-            <h1>Software Testing Services Yara Tech</h1>
+            <h1>Software Testing Services</h1>
             <div className={styleCSS.container}>
                 <div className={styleCSS.row}>
                     <div>
