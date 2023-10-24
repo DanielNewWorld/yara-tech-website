@@ -1,7 +1,6 @@
 .aboutUs {
-    grid-area: aboutUs;
-    width: 50%;
-    margin: 0 auto;
+    margin-left: 30px;
+    margin-right: 30px;
     /*background-color:green;*/
   }
 
