@@ -5,6 +5,8 @@ import image2 from '../../images/2.jpg';
 import image3 from '../../images/3.jpg';
 import image4 from '../../images/4.jpg';
 import image5 from '../../images/5.jpg';
+import AboutUs from "../AboutUs/AboutUs";
+import {Route, Routes} from "react-router-dom";
 
 const ImageSlider = (props) => {
 
@@ -49,14 +51,14 @@ const ImageSlider = (props) => {
     <div className={styleCSS.serviceItem}>
       {/*<img className={styleCSS.imgItem} src={props.data[currentImage].imgSrc} alt={`Image ${currentImage}`} />*/}
       <img className={styleCSS.imgItem} src={image} alt={`I ${currentImage}`} />
-      {<div className={styleCSS.desriptionItem}>
+      <div className={styleCSS.desriptionItem}>
         <div className={styleCSS.desriptionContents}>
           <h2>
             {props.data[currentImage].description}
-            <button className={styleCSS.button} onClick={() => scrollToSection('contact')}>CONTACT US</button>
+            {/*<button className={styleCSS.button} onClick={`mailto:${props.data.email}`}>CONTACT US</button>*/}
           </h2>
         </div>
-      </div> }
+      </div>
     </div>
     </section>
   );
