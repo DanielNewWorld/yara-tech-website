@@ -7,6 +7,7 @@ import image4 from '../../images/usability-testing.png';
 import image5 from '../../images/compatibility-testing.png';
 import image6 from '../../images/localization-testing.png';
 import image7 from '../../images/accessibility-testing.png';
+import image8 from '../../images/accessibility-testing.png';
 
 const Content = () => {
     return (
@@ -91,14 +92,12 @@ const Content = () => {
                 </div>
 
                 <div className={styleCSS.row}>
-                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
+                    <div><img className={styleCSS.imgItem} src={image8} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Mobile App Testing:</h2>
                         <h3>Test mobile applications across different devices, screen resolutions, and operating systems
-                            to
-                            ensure
-                            they function properly and provide an optimal user experience.</h3>
+                            to ensure they function properly and provide an optimal user experience.</h3>
                     </div>
                 </div>
 

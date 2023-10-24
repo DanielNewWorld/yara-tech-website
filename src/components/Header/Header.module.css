@@ -5,6 +5,8 @@
     position: sticky;
     top: 0px;
     z-index: 999;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .gridHeader {
