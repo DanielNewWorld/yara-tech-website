@@ -96,9 +96,12 @@ const Content = () => {
                     <h3>Ensure the software is accessible to users with disabilities, complying with accessibility
                         standards,
                         such as WCAG (Web Content Accessibility Guidelines).</h3>
+
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                 </div>
 
                 <div className={styleCSS.row}>
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                     <div></div>
                     <h2>Mobile App Testing:</h2>
                     <h3>Test mobile applications across different devices, screen resolutions, and operating systems
@@ -113,9 +116,11 @@ const Content = () => {
                     <h3>Develop and implement automated testing frameworks, scripts, and tools to improve testing
                         efficiency,
                         reduce time-to-market, and enhance test coverage.</h3>
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                 </div>
 
                 <div className={styleCSS.row}>
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                     <h2>Test Documentation:</h2>
                     <h3>Create comprehensive test plans, test cases, and test reports that document the testing
                         process,
@@ -128,9 +133,11 @@ const Content = () => {
                         with
                         automated
                         testing at each stage.</h3>
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                 </div>
 
                 <div className={styleCSS.row}>
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                     <h2>Exploratory Testing:</h2>
                     <h3>Conduct ad-hoc testing, exploring the software to discover new defects, usability issues,
                         and
@@ -145,6 +152,7 @@ const Content = () => {
                         (APIs)
                         to
                         ensure seamless integration between software components.</h3>
+                    {/*<div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>*/}
                 </div>
             </div>
         </div>
