@@ -47,7 +47,7 @@ const ImageSlider = (props) => {
       <div className={styleCSS.desriptionItem}>
         <div className={styleCSS.desriptionContents}>
           <h2>
-            {props.data[currentImage].description}
+            Welcome to Yara Tech - Your Partner in Quality Assurance
             {/*<button className={styleCSS.button} onClick={`mailto:${props.data.email}`}>CONTACT US</button>*/}
           </h2>
         </div>

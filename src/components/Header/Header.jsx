@@ -27,39 +27,46 @@ const Header = (props) => {
                                     <img alt="" src={logo} className={styleCSS.logo}/>
                                 </NavLink></div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/services" activeClassName={styleCSS.activeLink}>Services</NavLink>
+                                    <NavLink to="/services"
+                                             className={styleCSS.menuNavlink}
+                                    >Services</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/howwework" activeClassName={styleCSS.activeLink}>How we work</NavLink>
+                                    <NavLink to="/howwework"
+                                             className={styleCSS.menuNavlink}
+                                    >How we work</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/about" activeClassName={styleCSS.activeLink}>About Us</NavLink>
+                                    <NavLink to="/about"
+                                             className={styleCSS.menuNavlink}
+                                    >About Us</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/contact" activeClassName={styleCSS.activeLink}>Contact Us</NavLink>
+                                    <NavLink to="/contact"
+                                             className={styleCSS.menuNavlink}
+                                    >Contact Us</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/blog" activeClassName={styleCSS.activeLink}>Blog</NavLink>
+                                    <NavLink to="/blog"
+                                             className={styleCSS.menuNavlink}
+                                    >Blog</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/faq" activeClassName={styleCSS.activeLink}>FAQs</NavLink>
+                                    <NavLink to="/faq"
+                                             className={styleCSS.menuNavlink}
+                                    >FAQs</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/signin" activeClassName={styleCSS.activeLink}>Sign in</NavLink>
+                                    <NavLink to="/signin"
+                                             className={styleCSS.menuNavlink}
+                                    >Sign in</NavLink>
                                 </div>
                             </nav>
                         )}
                 </div>
             </div>
-
         </header>
     );
 }
 
 export default Header;
-
-/* <img src="images/background_0.jpg" className={styleCSS.imageHeader} />
-
-<div className={styleCSS.textHeader}>
-    <h1>{state.name}</h1>
-</div> */

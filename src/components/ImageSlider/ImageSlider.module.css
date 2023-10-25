@@ -24,10 +24,13 @@
   }
 
   .desriptionContents {
-    text-align: center;
-    margin: 100px auto;
-    width: auto; 
+    /*text-align: center;*/
+    margin-top: 450px;
+    margin-left: 50px;
+    width: auto;
     display: block;
+    text-shadow: 5px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 26px;
   }
 
   .button {
