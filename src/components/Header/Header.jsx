@@ -59,7 +59,7 @@ const Header = (props) => {
                                 </div>
                                 <div className={styleCSS.menuItem}>
                                     <NavLink to="/about"
-                                             className={styleCSS.menuNavlink}
+                                             className={styleCSS.menuNavlinkMark}
                                     >About Us</NavLink>
                                 </div>
                             </nav>
