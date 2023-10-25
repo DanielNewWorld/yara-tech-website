@@ -20,7 +20,7 @@ const Services = () => {
         <div>
             <h1>Software Testing Services</h1>
             <div className={styleCSS.services}>
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Functional Testing</h2>
@@ -30,7 +30,7 @@ const Services = () => {
                     <div><img className={styleCSS.imgItem} src={image1} alt='imagecontent'/></div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowWhite}>
                     <div><img className={styleCSS.imgItem} src={image2} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
@@ -40,7 +40,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Performance Testing:</h2>
@@ -51,7 +51,7 @@ const Services = () => {
                     <div><img className={styleCSS.imgItem} src={image3} alt='imagecontent'/></div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowWhite}>
                     <div><img className={styleCSS.imgItem} src={image4} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
@@ -62,7 +62,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Compatibility Testing:</h2>
@@ -74,7 +74,7 @@ const Services = () => {
                     <div><img className={styleCSS.imgItem} src={image5} alt='imagecontent'/></div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowWhite}>
                     <div><img className={styleCSS.imgItem} src={image6} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
@@ -86,7 +86,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Accessibility Testing:</h2>
@@ -97,7 +97,7 @@ const Services = () => {
                     <div><img className={styleCSS.imgItem} src={image7} alt='imagecontent'/></div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowWhite}>
                     <div><img className={styleCSS.imgItem} src={image8} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
@@ -107,7 +107,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Test Automation: </h2>
@@ -118,7 +118,7 @@ const Services = () => {
                     <div><img className={styleCSS.imgItem} src={image9} alt='imagecontent'/></div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowWhite}>
                     <div><img className={styleCSS.imgItem} src={image10} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
@@ -129,7 +129,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>Continuous Integration and Continuous Delivery (CI/CD) Testing:</h2>
@@ -141,7 +141,7 @@ const Services = () => {
                     <div><img className={styleCSS.imgItem} src={image11} alt='imagecontent'/></div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowWhite}>
                     <div><img className={styleCSS.imgItem} src={image12} alt='imagecontent'/></div>
                     <div>
                         <br/><br/><br/><br/>
@@ -154,7 +154,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                <div className={styleCSS.row}>
+                <div className={styleCSS.rowGray}>
                     <div>
                         <br/><br/><br/><br/>
                         <h2>API Testing:</h2>
