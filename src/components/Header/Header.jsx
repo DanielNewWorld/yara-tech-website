@@ -37,9 +37,9 @@ const Header = (props) => {
                                     >How we work</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/contact"
+                                    <NavLink to="/about"
                                              className={styleCSS.menuNavlink}
-                                    >Contact Us</NavLink>
+                                    >About Us</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
                                     <NavLink to="/blog"
@@ -58,9 +58,9 @@ const Header = (props) => {
                                     >Sign in</NavLink>
                                 </div>
                                 <div className={styleCSS.menuItem}>
-                                    <NavLink to="/about"
+                                    <NavLink to="/contact"
                                              className={styleCSS.menuNavlinkMark}
-                                    >About Us</NavLink>
+                                    >Contact Us</NavLink>
                                 </div>
                             </nav>
                         )}
