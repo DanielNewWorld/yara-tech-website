@@ -6,7 +6,7 @@ let User = ({user}) => {
           <span>
            <div>{user.name}</div>
             <div>{user.id}</div>
-            <img className={styleCSS.imgItem} src={user.photos.small != null ? user.photos.small : "https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png"}></img>
+            <img className={styleCSS.imgItem} alt="user" src={user.photos.small != null ? user.photos.small : "https://cdn.pixabay.com/photo/2017/11/10/05/48/user-2935527_1280.png"}></img>
             <div>___</div>
           </span>
   </div>

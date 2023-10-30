@@ -1,5 +1,5 @@
 import './App.css';
-import React, {Component, Suspense} from 'react';
+import React, {Component} from 'react';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Contact from './components/Contact/Contact';
 import FooterContainer from './components/Footer/FooterContainer';
@@ -8,8 +8,6 @@ import {Route, Routes} from "react-router-dom";
 import Content from "./components/Content/Content";
 import Services from "./components/Services/Services";
 import Login from "./components/Login/Login";
-import Preloader from "./components/Common/Preloader/Preloader";
-import UsersContainer from "./components/Users/UsersContainer";
 import HowWeWork from "./components/HowWeWork/HowWeWork";
 
 //const UsersContainer = React.lazy(() => import("./components/Users/UserContainer"));
