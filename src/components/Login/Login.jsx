@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 // import styleCSS from './Login.module.css';
 import {Field, reduxForm} from "redux-form";
 import {maxLengthCreator, required} from "../../utils/validators/validators";
 import {Input} from "../Common/FormsControls/FormsControls";
+import UserContainer from "../Users/UsersContainer";
+import Preloader from "../Common/Preloader/Preloader";
 
 const LoginForm = (props) => {
     return (
@@ -30,7 +32,10 @@ const LoginReduxForm = reduxForm({
 const Login = (props) => {
     const onSubmit = (formData) => {
         console.log(formData)
-        alert(formData.login);
+        alert(formData.password);
+        // <Suspense fallback={<div><Preloader/></div>}>
+        //     <UsersContainer/>
+        // </Suspense>
     }
 
     return (
