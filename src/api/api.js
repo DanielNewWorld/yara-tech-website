@@ -4,10 +4,10 @@ export const username = 'admin';
 export const password = 'qwerty';
 const basicAuthCredentials = btoa(`${username}:${password}`);
 
-const id = 1699833018020;
-const data = {
-    firstname: 'user8',
-};
+// const id = 1699833018020;
+// const data = {
+//     firstname: 'user8',
+// };
 
 // const instance = axios.create({
 //     // withCredentials: true,

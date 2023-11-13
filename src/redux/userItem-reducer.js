@@ -64,11 +64,11 @@ export const addItem = () => {
     }
 }
 
-const setBD = (items) => {
-    return {
-        type: SET_BD,
-        items
-    }
+// const setBD = (items) => {
+//     return {
+//         type: SET_BD,
+//         items
+//     }
 }
 
 const setCurrentPage = (currentPage) => {
@@ -78,12 +78,12 @@ const setCurrentPage = (currentPage) => {
     }
 }
 
-const setTotalUserCount = (totalCount) => {
-    return {
-        type: SET_TOTAL_COUNT,
-        count: totalCount
-    }
-}
+// const setTotalUserCount = (totalCount) => {
+//     return {
+//         type: SET_TOTAL_COUNT,
+//         count: totalCount
+//     }
+// }
 
 const toggleIsFetching = (isFetching) => {
     return {
