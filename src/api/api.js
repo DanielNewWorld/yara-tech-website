@@ -10,7 +10,7 @@ const basicAuthCredentials = btoa(`${username}:${password}`);
 // };
 
 const instance = axios.create({
-    // withCredentials: true,
+    withCredentials: true,
     baseURL: 'https://main--warm-phoenix-949f5d.netlify.app/api',
     headers: {
         'Authorization': `Basic ${basicAuthCredentials}`,
