@@ -9,23 +9,20 @@ const basicAuthCredentials = btoa(`${username}:${password}`);
 //     firstname: 'user8',
 // };
 
-// const instance = axios.create({
-//     // withCredentials: true,
-//     baseURL: 'https://main--warm-phoenix-949f5d.netlify.app/api',
-// })
+const instance = axios.create({
+    // withCredentials: true,
+    baseURL: 'https://main--warm-phoenix-949f5d.netlify.app/api',
+    headers: {
+        'Authorization': `Basic ${basicAuthCredentials}`,
+    },
+})
 
 const baseURL = 'https://main--warm-phoenix-949f5d.netlify.app/api';
 
 export const usersAPI = {
     async getUsers(currentPage = 1, pageSize = 10) {
         try {
-            const response = await axios.get(`${baseURL}/`,
-                {
-                    headers: {
-                        // 'Content-Type': 'application/json',
-                        Authorization: `Basic ${basicAuthCredentials}`
-                    },
-                })
+            const response = await instance.get(`/`)
             return response.data;
         } catch (error) {
             console.error('Error:', error);
