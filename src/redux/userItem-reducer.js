@@ -64,12 +64,12 @@ export const addItem = () => {
     }
 }
 
-// const setBD = (items) => {
-//     return {
-//         type: SET_BD,
-//         items
-//     }
-//}
+const setBD = (items) => {
+    return {
+        type: SET_BD,
+        items
+    }
+}
 
 const setCurrentPage = (currentPage) => {
     return {
@@ -78,12 +78,12 @@ const setCurrentPage = (currentPage) => {
     }
 }
 
-// const setTotalUserCount = (totalCount) => {
-//     return {
-//         type: SET_TOTAL_COUNT,
-//         count: totalCount
-//     }
-// }
+const setTotalUserCount = (totalCount) => {
+    return {
+        type: SET_TOTAL_COUNT,
+        count: totalCount
+    }
+}
 
 const toggleIsFetching = (isFetching) => {
     return {
@@ -98,10 +98,10 @@ export const requestUsers = (page, pageSize) => {
         dispatch(setCurrentPage(page));
         try {
             usersAPI.getUsers(page, pageSize).then(data => {
-                // dispatch(toggleIsFetching(false));
-                // dispatch(setBD(data.items));
-                // dispatch(setTotalUserCount(data.totalCount));
-                console.log("data: " + data)
+                dispatch(toggleIsFetching(false));
+                dispatch(setBD(data.items));
+                dispatch(setTotalUserCount(data.totalCount));
+                // console.log("items: " + data.items[0].id)
             })
         } catch (error) {
             console.log(error);

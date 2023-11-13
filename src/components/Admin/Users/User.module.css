@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    gap: 10px;
+}
+
+.imgItem {
+    width: 2%;
+    margin-bottom: 10px;
+  }
+
+.container > div {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.short {
+    width: 20px;
+}
+
+.long {
+    width: 150px;
+}
+
+.containerTable {
+    display: flex;
+    gap: 10px;
+    background-color: cadetblue;
+}
+
+.containerTable > div {
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}

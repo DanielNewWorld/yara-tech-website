@@ -1,6 +1,7 @@
 import React from 'react';
-import Paginator from "../Common/Paginator/Paginator";
+import Paginator from "../../Common/Paginator/Paginator";
 import User from "./User";
+import UsersTable from "./UsersTable";
 
 let Users = ({currentPage, onPageChanged, totalCount, pageSize, data}) => {
   return <div>
@@ -8,12 +9,18 @@ let Users = ({currentPage, onPageChanged, totalCount, pageSize, data}) => {
                onPageChanged={onPageChanged}
                totalCount={totalCount}
                pageSize={pageSize}/>
-    <div>
-    {data.map(u =>
+    <UsersTable/>
+
+    <div>{data.map(u =>
           <User user={u}
                 key={u.id} />
-      )}
-    </div>
+      )}</div>
+
+    <UsersTable/>
+    <Paginator currentPage={currentPage}
+               onPageChanged={onPageChanged}
+               totalCount={totalCount}
+               pageSize={pageSize}/>
   </div>
 }
 

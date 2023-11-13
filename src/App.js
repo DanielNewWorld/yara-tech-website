@@ -9,7 +9,7 @@ import Content from "./components/Content/Content";
 import Services from "./components/Services/Services";
 // import Login from "./components/Login/Login";
 import HowWeWork from "./components/HowWeWork/HowWeWork";
-import AdminPanel from "./components/AdminPanel/AdminPanel";
+import AdminPanel from "./components/Admin/AdminPanel/AdminPanel";
 
 //const UsersContainer = React.lazy(() => import("./components/Users/UserContainer"));
 

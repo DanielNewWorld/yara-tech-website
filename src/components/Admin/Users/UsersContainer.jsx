@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 import {
     addItem,
     requestUsers
-} from '../../redux/userItem-reducer';
+} from '../../../redux/userItem-reducer';
 import Users from './Users';
-import Preloader from '../Common/Preloader/Preloader';
+import Preloader from '../../Common/Preloader/Preloader';
 // import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
-import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../redux/users-selectors";
+import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../../redux/users-selectors";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
