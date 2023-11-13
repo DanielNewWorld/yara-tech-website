@@ -17,8 +17,6 @@ const instance = axios.create({
     },
 })
 
-const baseURL = 'https://main--warm-phoenix-949f5d.netlify.app/api';
-
 export const usersAPI = {
     async getUsers(currentPage = 1, pageSize = 10) {
         try {
