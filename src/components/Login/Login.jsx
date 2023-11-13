@@ -13,9 +13,9 @@ const LoginForm = (props) => {
                 <div>
                     <Field type="text" placeholder="Password" component={Input} name={"password"} validate={[required, maxLengthCreator(10)]}/>
                 </div>
-                <div>
-                    <Field component={Input} type="checkbox" name={"rememberMe"}/> remember me
-                </div>
+                {/*<div>*/}
+                {/*    <Field component={Input} type="checkbox" name={"rememberMe"}/> remember me*/}
+                {/*</div>*/}
                 <div>
                     <button>Login</button>
                 </div>

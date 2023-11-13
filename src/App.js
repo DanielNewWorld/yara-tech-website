@@ -9,6 +9,7 @@ import Content from "./components/Content/Content";
 import Services from "./components/Services/Services";
 import Login from "./components/Login/Login";
 import HowWeWork from "./components/HowWeWork/HowWeWork";
+import AdminPanel from "./components/AdminPanel/AdminPanel";
 
 //const UsersContainer = React.lazy(() => import("./components/Users/UserContainer"));
 
@@ -41,7 +42,8 @@ class App extends Component {
                     <Route path='/howwework' element={<HowWeWork/>}/>
                     <Route path='/contact' element={<Contact/>}/>
                     <Route path='/about' element={<AboutUs/>}/>
-                    <Route path='/signin' element={<Login/>}/>
+                    {/*<Route path='/signin' element={<Login/>}/>*/}
+                    <Route path='/signin' element={<AdminPanel/>}/>
                 </Routes>
                 {/*<Suspense fallback={<div><Preloader/></div>}>*/}
                 {/*    <UsersContainer/>*/}
