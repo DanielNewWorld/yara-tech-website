@@ -1,5 +1,4 @@
 import React from 'react';
-import styleCSS from './AdminPanel.module.css';
 import UsersContainer from "../Users/UsersContainer";
 import ModalAddUser from "../ModalAddUser/ModalAddUser";
 
