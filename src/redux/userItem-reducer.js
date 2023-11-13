@@ -69,7 +69,7 @@ export const addItem = () => {
 //         type: SET_BD,
 //         items
 //     }
-}
+//}
 
 const setCurrentPage = (currentPage) => {
     return {
