@@ -4,10 +4,11 @@ export const username = 'admin';
 export const password = 'qwerty';
 const basicAuthCredentials = btoa(`${username}:${password}`);
 
-// const id = 1699833018020;
-// const data = {
-//     firstname: 'user8',
-// };
+export type UserCreateModel = {
+    firstname: string
+}
+
+let endpoint = "/"
 
 const instance = axios.create({
     withCredentials: true,
@@ -21,6 +22,19 @@ export const usersAPI = {
     async getUsers(currentPage = 1, pageSize = 10) {
         try {
             const response = await instance.get(`/`)
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    },
+
+    async addUsers(firstname: string) {
+        const data: UserCreateModel = {
+            firstname: firstname,
+        };
+
+        try {
+            const response = await instance.post(`${endpoint}`, data);
             return response.data;
         } catch (error) {
             console.error('Error:', error);

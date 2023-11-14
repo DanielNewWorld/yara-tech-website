@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styleCSS from './ModalAddUser.module.css';
+import {usersAPI} from "../../../api/api";
 
 const ModalAddUser = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -20,6 +21,8 @@ const ModalAddUser = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        usersAPI.addUsers(formData.firstName)
         console.log('Form data submitted:', formData);
         closeModal();
     };

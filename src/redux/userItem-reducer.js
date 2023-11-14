@@ -29,7 +29,7 @@ const userItemReducer = (state = initialState, action) => {
                 items: [...state.items, newItem]
             };
 
-        case SET_BD:
+        case SET_BD: //getUsers
             return {
                 ...state,
                 items: [...action.items]
