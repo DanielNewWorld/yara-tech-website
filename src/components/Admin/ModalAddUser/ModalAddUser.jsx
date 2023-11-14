@@ -3,6 +3,7 @@ import styleCSS from './ModalAddUser.module.css';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Field, reduxForm} from "redux-form";
+import {getPageSize} from "../../../redux/users-selectors";
 
 const AddUserForm = (props) => {
     // const [formData, setFormData] = useState({ firstname: '', phone: '380' });
@@ -47,8 +48,7 @@ const ModalAddUser = (props) => {
 
     const onSubmit = (formData) => {
         // alert(formData.phone);
-        // usersAPI.addUsers(formData.firstname)
-        props.onAddUser(formData.firstname)
+        props.onAddUser(props.currentPage,props.pageSize,formData.firstname)
         closeModal();
     };
 

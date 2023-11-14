@@ -89,11 +89,11 @@ export const requestUsers = (page, pageSize) => {
     }
 }
 
-export const requestAddUsers = (firstname) => {
+export const requestAddUsers = (page, pageSize, firstname) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         try {
-            usersAPI.addUsers(firstname).then(data => {
+            usersAPI.addUsers(page, pageSize, firstname).then(data => {
                 dispatch(toggleIsFetching(false));
                 dispatch(setBD(data.items));
             })

@@ -22,7 +22,11 @@ class UsersAPIComponent extends React.Component {
 
     render() {
         return <div>
-            <ModalAddUser onAddUser={this.props.addUserThunkCreator}/>
+            <ModalAddUser
+                onAddUser={this.props.addUserThunkCreator}
+                pageSize={this.props.pageSize}
+                currentPage={this.props.currentPage}
+            />
 
             {this.props.isFetching ? <Preloader/> : null}
             <Users totalCount={this.props.totalCount}

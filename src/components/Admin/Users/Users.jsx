@@ -13,7 +13,7 @@ let Users = ({currentPage, onPageChanged, totalCount, pageSize, data}) => {
 
     <div>{data.map(u =>
           <User user={u}
-                key={u.id} />
+                key={u._id} />
       )}</div>
 
     <UsersTable/>

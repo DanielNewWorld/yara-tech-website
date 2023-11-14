@@ -28,9 +28,9 @@ export const usersAPI = {
         }
     },
 
-    async addUsers(firstname: string) {
+    async addUsers(currentPage = 1, pageSize = 10, firstname: string) {
         try {
-            const response = await instance.post(`${endpoint}`, {
+            const response = await instance.post(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`, {
                 firstname: firstname
             });
             return response.data;
