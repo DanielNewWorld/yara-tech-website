@@ -21,7 +21,7 @@ const instance = axios.create({
 export const usersAPI = {
     async getUsers(currentPage = 1, pageSize = 10) {
         try {
-            const response = await instance.get(`/`)
+            const response = await instance.get(`?page=${currentPage}&pageSize=${pageSize}`)
             return response.data;
         } catch (error) {
             console.error('Error:', error);
@@ -29,12 +29,10 @@ export const usersAPI = {
     },
 
     async addUsers(firstname: string) {
-        const data: UserCreateModel = {
-            firstname: firstname,
-        };
-
         try {
-            const response = await instance.post(`${endpoint}`, data);
+            const response = await instance.post(`${endpoint}`, {
+                firstname: firstname
+            });
             return response.data;
         } catch (error) {
             console.error('Error:', error);
