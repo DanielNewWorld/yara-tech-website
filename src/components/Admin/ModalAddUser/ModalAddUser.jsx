@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styleCSS from './ModalAddUser.module.css';
-import {usersAPI} from "../../../api/api";
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Field, reduxForm} from "redux-form";

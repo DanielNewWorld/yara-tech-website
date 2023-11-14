@@ -1,5 +1,4 @@
 import {usersAPI} from "../api/api";
-import {getCurrentPage, getPageSize} from "./users-selectors";
 
 const SET_BD = 'SET-BD';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
