@@ -1,6 +1,6 @@
 import {usersAPI} from "../api/api";
+import {getCurrentPage, getPageSize} from "./users-selectors";
 
-const ADD_ITEM = 'ADD-ITEM';
 const SET_BD = 'SET-BD';
 const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 const SET_TOTAL_COUNT = 'SET_TOTAL_COUNT';
@@ -16,19 +16,6 @@ let initialState = {
 
 const userItemReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_ITEM:
-            let newItem = {
-                id: 3,
-                imgSrc: "images/3.jpg",
-                nameItem: "service 3",
-                description: "description 3"
-            }
-
-            return {
-                ...state,
-                items: [...state.items, newItem]
-            };
-
         case SET_BD: //getUsers
             return {
                 ...state,
@@ -55,12 +42,6 @@ const userItemReducer = (state = initialState, action) => {
 
         default:
             return state;
-    }
-}
-
-export const addItem = () => {
-    return {
-        type: ADD_ITEM
     }
 }
 
@@ -102,6 +83,20 @@ export const requestUsers = (page, pageSize) => {
                 dispatch(setBD(data.items));
                 dispatch(setTotalUserCount(data.totalCount));
                 // console.log("items: " + data.items[0].id)
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const requestAddUsers = (firstname) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true));
+        try {
+            usersAPI.addUsers(firstname).then(data => {
+                dispatch(toggleIsFetching(false));
+                dispatch(setBD(data.items));
             })
         } catch (error) {
             console.log(error);

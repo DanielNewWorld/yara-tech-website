@@ -5,7 +5,6 @@ import ModalAddUser from "../ModalAddUser/ModalAddUser";
 const AdminPanel = () => {
     return (
         <div>
-            <ModalAddUser/>
             <UsersContainer/>
         </div>
     );

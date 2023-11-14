@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {
-    addItem,
+    requestAddUsers,
     requestUsers
 } from '../../../redux/userItem-reducer';
 import Users from './Users';
@@ -9,14 +9,11 @@ import Preloader from '../../Common/Preloader/Preloader';
 // import {withAuthRedirect} from "../../hoc/withAuthRedirect";
 import {compose} from "redux";
 import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../../redux/users-selectors";
+import ModalAddUser from "../ModalAddUser/ModalAddUser";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
         this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
-    }
-
-    onAddItem = () => {
-        this.props.addItem();
     }
 
     onPageChanged = (pageNumber) => {
@@ -24,15 +21,17 @@ class UsersAPIComponent extends React.Component {
     }
 
     render() {
-        return <>
-            {this.props.isFetching ? <Preloader />: null}
+        return <div>
+            <ModalAddUser onAddUser={this.props.addUserThunkCreator}/>
+
+            {this.props.isFetching ? <Preloader/> : null}
             <Users totalCount={this.props.totalCount}
                    pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage}
                    onPageChanged={this.onPageChanged}
                    data={this.props.data}
             />
-        </>
+        </div>
     }
 }
 
@@ -49,7 +48,7 @@ let mapStateToProps = (state) => {
 
 export default compose(
     connect(mapStateToProps, {
-        addItem,
+        addUserThunkCreator: requestAddUsers,
         getUsersThunkCreator: requestUsers
     })
     //,
