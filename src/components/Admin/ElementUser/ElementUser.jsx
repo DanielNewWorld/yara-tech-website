@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import styleCSS from './ElementUser.module.css';
 import {Field, reduxForm} from "redux-form";
-import userDelIMG from "../../../images/User/delUser.png";
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 
