@@ -26,14 +26,14 @@ const ElementUserReduxForm = reduxForm({
 })(ElementUserForm)
 
 const ElementUser = (props) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpenUpdate, setIsModalOpenUpdate] = useState(false);
 
     const openModal = () => {
-        setIsModalOpen(true);
+        setIsModalOpenUpdate(true);
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
+        setIsModalOpenUpdate(false);
     };
 
     const onSubmit = (formData) => {
@@ -46,7 +46,7 @@ const ElementUser = (props) => {
         <div>
             <div onClick={openModal} className={styleCSS.container}>{props.elementValue}</div>
 
-            {isModalOpen && (
+            {isModalOpenUpdate && (
             <div className={styleCSS.modalOverlay}>
                 <div className={styleCSS.modalContent}>
                     <ElementUserReduxForm onSubmit={onSubmit} firstname={props.elementValue}/>

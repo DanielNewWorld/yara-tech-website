@@ -21,14 +21,14 @@ const DeleteUserReduxForm = reduxForm({
 })(DeleteUserForm)
 
 const DeleteUser = (props) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpenDelete, setIsModalOpenDelete] = useState(false);
 
     const openModal = () => {
-        setIsModalOpen(true);
+        setIsModalOpenDelete(true);
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
+        setIsModalOpenDelete(false);
     };
 
     const onSubmit = () => {
@@ -43,7 +43,7 @@ const DeleteUser = (props) => {
             <img className={styleCSS.imgItem} alt="userDel"
                  src={userDelIMG} onClick={openModal}></img>
 
-            {isModalOpen && (
+            {isModalOpenDelete && (
             <div className={styleCSS.modalOverlay}>
                 <div className={styleCSS.modalContent}>
                     <DeleteUserReduxForm onSubmit={onSubmit} deleteID={props.deleteID}/>

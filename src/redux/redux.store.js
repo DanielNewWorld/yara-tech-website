@@ -9,7 +9,10 @@ let reducers = combineReducers({
     servicesData: servicesItemReducer,
     firmData: firmReducer,
     userData: userReducer,
-    form: formReducer.plugin
+    addUser: formReducer.plugin,
+    findUser: formReducer.plugin,
+    deleteUser: formReducer.plugin,
+    elementUser: formReducer.plugin
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

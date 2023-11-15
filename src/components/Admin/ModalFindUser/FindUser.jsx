@@ -26,14 +26,14 @@ const FindUserReduxForm = reduxForm({
 })(FindUserForm)
 
 const FindUser = (props) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpenFind, setIsModalOpenFind] = useState(false);
 
     const openModal = () => {
-        setIsModalOpen(true);
+        setIsModalOpenFind(true);
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
+        setIsModalOpenFind(false);
     };
 
     const onSubmit = (formData) => {
@@ -46,7 +46,7 @@ const FindUser = (props) => {
         <div>
             <button className={styleCSS.menuMark} onClick={openModal}>Find client</button>
 
-            {isModalOpen && (
+            {isModalOpenFind && (
             <div className={styleCSS.modalOverlay}>
                 <div className={styleCSS.modalContent}>
                     <FindUserReduxForm onSubmit={onSubmit}/>
