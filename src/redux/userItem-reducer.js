@@ -123,7 +123,7 @@ export const requestUpdateUsers = (page, pageSize, firstname, id) => {
         try {
             usersAPI.updateUsers(page, pageSize, firstname, id).then(data => {
                 dispatch(toggleIsFetching(false));
-                // dispatch(setBD(data.items));
+                dispatch(setBD(data.items));
             })
         } catch (error) {
             console.log(error);
