@@ -14,9 +14,9 @@ let reducers = combineReducers({
     servicesData: servicesItemReducer,
     firmData: firmReducer,
     userData: userReducer,
-    // form: formReducer,
-    addUser: formReducer,
-    findUser: formReducer,
+    form: formReducer
+    // addUser: formReducer,
+    // findUser: formReducer,
     // deleteUser: formDeleteReducer,
     // elementUser: formUpdateReducer
 });
