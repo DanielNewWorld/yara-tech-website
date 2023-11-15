@@ -19,6 +19,10 @@ class UsersAPIComponent extends React.Component {
         this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
     }
 
+    componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
+        // this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
+    }
+
     onPageChanged = (pageNumber) => {
         this.props.getUsersThunkCreator(pageNumber, this.props.pageSize);
     }

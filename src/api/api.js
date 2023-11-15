@@ -40,10 +40,10 @@ export const usersAPI = {
         }
     },
 
-    async deleteUsers(currentPage = 1, pageSize = 10, firstname = '', id: string) {
+    async deleteUsers(currentPage = 1, pageSize = 10, firstname: string, id: string) {
         endpoint = id;
         try {
-            const response = await instance.delete(`${endpoint}`);
+            const response = await instance.delete(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`);
             return response.data;
         } catch (error) {
             console.error('Error:', error);

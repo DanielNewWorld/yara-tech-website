@@ -33,7 +33,7 @@ const DeleteUser = (props) => {
 
     const onSubmit = () => {
         // alert(props.deleteID);
-        props.onDeleteUser(props.deleteID)
+        props.onDeleteUser(props.currentPage, props.pageSize, '', props.deleteID)
         closeModal();
     };
 

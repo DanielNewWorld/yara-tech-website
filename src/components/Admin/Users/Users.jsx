@@ -3,25 +3,27 @@ import Paginator from "../../Common/Paginator/Paginator";
 import User from "./User";
 import UsersTable from "./UsersTable";
 
-let Users = ({currentPage, onPageChanged, totalCount, pageSize, data, onDeleteUser}) => {
+let Users = (props) => {
     return <div>
-        <Paginator currentPage={currentPage}
-                   onPageChanged={onPageChanged}
-                   totalCount={totalCount}
-                   pageSize={pageSize}/>
+        <Paginator currentPage={props.currentPage}
+                   onPageChanged={props.onPageChanged}
+                   totalCount={props.totalCount}
+                   pageSize={props.pageSize}/>
         <UsersTable/>
 
         <div>
-            {data.map(u => <User user={u}
+            {props.data.map(u => <User user={u}
                                  key={u._id}
-                                 onDeleteUser={onDeleteUser}/>
+                                 pageSize={props.pageSize}
+                                 currentPage={props.currentPage}
+                                 onDeleteUser={props.onDeleteUser}/>
             )}</div>
 
         <UsersTable/>
-        <Paginator currentPage={currentPage}
-                   onPageChanged={onPageChanged}
-                   totalCount={totalCount}
-                   pageSize={pageSize}/>
+        <Paginator currentPage={props.currentPage}
+                   onPageChanged={props.onPageChanged}
+                   totalCount={props.totalCount}
+                   pageSize={props.pageSize}/>
     </div>
 }
 

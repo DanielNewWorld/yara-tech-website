@@ -103,13 +103,13 @@ export const requestAddUsers = (page, pageSize, firstname) => {
     }
 }
 
-export const requestDeleteUsers = (id) => {
+export const requestDeleteUsers = (page, pageSize, firstname, id) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         try {
-            usersAPI.deleteUsers(id).then(data => {
+            usersAPI.deleteUsers(page, pageSize, firstname, id).then(data => {
                 dispatch(toggleIsFetching(false));
-                // dispatch(setBD(data.items));
+                dispatch(setBD(data.items));
             })
         } catch (error) {
             console.log(error);
