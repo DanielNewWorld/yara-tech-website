@@ -9,7 +9,7 @@ let reducers = combineReducers({
     servicesData: servicesItemReducer,
     firmData: firmReducer,
     userData: userReducer,
-    form: formReducer,
+    form: formReducer.plugin,
     // addUser: formReducer,
     // findUser: formReducer,
     // deleteUser: formReducer,
