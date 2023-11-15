@@ -3,16 +3,21 @@ import servicesItemReducer from './servicesItem-reducer';
 import firmReducer from './firm-reducer';
 import userReducer from './userItem-reducer';
 import thunkMiddleware from "redux-thunk";
-import {reducer as formReducer} from 'redux-form';
+import formAddReducer from "./formAddReducer";
+import formFindReducer from "./formFindReducer";
+import formDeleteReducer from "./formDeleteReducer";
+import formUpdateReducer from "./formUpdateReducer";
+import {reducer as formReducer} from "redux-form";
 
 let reducers = combineReducers({
     servicesData: servicesItemReducer,
     firmData: firmReducer,
     userData: userReducer,
-    addUser: formReducer.plugin,
-    findUser: formReducer.plugin,
-    deleteUser: formReducer.plugin,
-    elementUser: formReducer.plugin
+    form: formReducer,
+    // addUser: formReducer,
+    // findUser: formReducer,
+    // deleteUser: formReducer,
+    // elementUser: formReducer
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
