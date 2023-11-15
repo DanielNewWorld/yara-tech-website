@@ -48,3 +48,8 @@
     font-weight: bold;
     width: 300px;
 }
+
+.imgItem {
+    width: 24px;
+    /*margin-bottom: 10px;*/
+}

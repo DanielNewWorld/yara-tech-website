@@ -1,25 +1,23 @@
 .container {
     display: flex;
     gap: 10px;
+
+    border: 1px solid #ccc;
+    padding: 5px;
+    /*margin-bottom: 10px;*/
 }
 
 .imgItem {
-    width: 2%;
+    width: 20px;
     margin-bottom: 10px;
   }
-
-.container > div {
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin-bottom: 10px;
-}
 
 .short {
     width: 20px;
 }
 
 .long {
-    width: 220px;
+    width: 250px;
 }
 
 .containerTable {

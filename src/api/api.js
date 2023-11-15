@@ -40,8 +40,8 @@ export const usersAPI = {
         }
     },
 
-    async deleteUsers(id: string) {
-        endpoint = endpoint + id;
+    async deleteUsers(currentPage = 1, pageSize = 10, firstname = '', id: string) {
+        endpoint = id;
         try {
             const response = await instance.delete(`${endpoint}`);
             return response.data;

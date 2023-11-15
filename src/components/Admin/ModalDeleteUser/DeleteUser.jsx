@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import styleCSS from './FindUser.module.css';
+import styleCSS from './DeleteUser.module.css';
 import {reduxForm} from "redux-form";
+import userDelIMG from "../../../images/User/delUser.png";
 
 const DeleteUserForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div className={styleCSS.container}>
-                <div><h3>Delete client?</h3></div>
+                <div><h3>Delete client id: {props.deleteID}?</h3></div>
                 <div>
                     <button type="submit" className={styleCSS.menuMark}>Yes, delete client</button>
                 </div>
@@ -30,20 +31,22 @@ const DeleteUser = (props) => {
         setIsModalOpen(false);
     };
 
-    const onSubmit = (formData) => {
-        alert(formData.id);
-        // props.onGetUser(props.currentPage,props.pageSize,formData.find)
+    const onSubmit = () => {
+        // alert(props.deleteID);
+        props.onDeleteUser(props.deleteID)
         closeModal();
     };
 
     return (
         <div>
-            <button className={styleCSS.menuMark} onClick={openModal}>Delete client</button>
+            {/*<button className={styleCSS.menuMark} onClick={openModal}>Delete client</button>*/}
+            <img className={styleCSS.imgItem} alt="userDel"
+                 src={userDelIMG} onClick={openModal}></img>
 
             {isModalOpen && (
             <div className={styleCSS.modalOverlay}>
                 <div className={styleCSS.modalContent}>
-                    <DeleteUserReduxForm onSubmit={onSubmit}/>
+                    <DeleteUserReduxForm onSubmit={onSubmit} deleteID={props.deleteID}/>
                     <button onClick={closeModal}>Close</button>
                 </div>
             </div>
@@ -52,4 +55,4 @@ const DeleteUser = (props) => {
     );
 };
 
-export default FindUser;
+export default DeleteUser;
