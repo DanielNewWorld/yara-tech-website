@@ -3,10 +3,6 @@ import servicesItemReducer from './servicesItem-reducer';
 import firmReducer from './firm-reducer';
 import userReducer from './userItem-reducer';
 import thunkMiddleware from "redux-thunk";
-import formAddReducer from "./formAddReducer";
-import formFindReducer from "./formFindReducer";
-import formDeleteReducer from "./formDeleteReducer";
-import formUpdateReducer from "./formUpdateReducer";
 import {reducer as formReducer} from "redux-form";
 
 let reducers = combineReducers({
