@@ -45,9 +45,6 @@ class App extends Component {
                     {/*<Route path='/signin' element={<Login/>}/>*/}
                     <Route path='/signin' element={<AdminPanel/>}/>
                 </Routes>
-                {/*<Suspense fallback={<div><Preloader/></div>}>*/}
-                {/*    <UsersContainer/>*/}
-                {/*</Suspense>*/}
                 <FooterContainer/>
             </div>
         );

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import UsersContainer from "../Users/UsersContainer";
+import Preloader from "../../Common/Preloader/Preloader";
 
 const AdminPanel = () => {
     return (
         <div>
-            <UsersContainer/>
+            <Suspense fallback={<div><Preloader/></div>}>
+                <UsersContainer/>
+            </Suspense>
         </div>
     );
 };
