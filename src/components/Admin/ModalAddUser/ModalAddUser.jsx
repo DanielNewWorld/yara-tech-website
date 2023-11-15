@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import styleCSS from './ModalAddUser.module.css';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Field, reduxForm} from "redux-form";
-import {getPageSize} from "../../../redux/users-selectors";
 
 const AddUserForm = (props) => {
     // const [formData, setFormData] = useState({ firstname: '', phone: '380' });
@@ -14,19 +13,18 @@ const AddUserForm = (props) => {
 
     return (
         <form onSubmit={props.handleSubmit}>
-            <label>
-                First Name:
-                <Field type="text" placeholder="First Name" component={Input} name={"firstname"}
-                       validate={[required, maxLengthCreator(10)]}/>
-            </label>
-            <br />
-            <label>
-                Phone:
-                <Field type="text" placeholder="phone" component={Input} name={"phone"}
-                       validate={[required, maxLengthCreator(10), containsDigitsValidator]}/>
-            </label>
-            <br />
-            <button type="submit">Send</button>
+            <div className={styleCSS.container}>
+                <div><h3>Enter new client details</h3></div>
+                <div>
+                    <Field type="text" placeholder="First Name" component={Input} name={"firstname"}
+                           validate={[required, maxLengthCreator(40)]}/>
+                </div>
+                <div>
+                    <Field type="text" placeholder="Phone" component={Input} name={"phone"}
+                           validate={[required, maxLengthCreator(20), containsDigitsValidator]}/>
+                </div>
+                <button type="submit" className={styleCSS.menuMark}>Add client</button>
+            </div>
         </form>
     )
 }
@@ -48,7 +46,7 @@ const ModalAddUser = (props) => {
 
     const onSubmit = (formData) => {
         // alert(formData.phone);
-        props.onAddUser(props.currentPage,props.pageSize,formData.firstname)
+        props.onAddUser(props.currentPage, props.pageSize, formData.firstname)
         closeModal();
     };
 
@@ -59,7 +57,6 @@ const ModalAddUser = (props) => {
             {isModalOpen && (
                 <div className={styleCSS.modalOverlay}>
                     <div className={styleCSS.modalContent}>
-                        <h2>Enter new client details</h2>
                         <AddUserReduxForm onSubmit={onSubmit}/>
                         <button onClick={closeModal}>Close</button>
                     </div>

@@ -19,9 +19,10 @@ const instance = axios.create({
 })
 
 export const usersAPI = {
-    async getUsers(currentPage = 1, pageSize = 10) {
+    async getUsers(currentPage = 1, pageSize = 10, firstname = '') {
+        const find = 'firstname=' + firstname
         try {
-            const response = await instance.get(`?page=${currentPage}&pageSize=${pageSize}`)
+            const response = await instance.get(`?page=${currentPage}&pageSize=${pageSize}&${find}`)
             return response.data;
         } catch (error) {
             console.error('Error:', error);

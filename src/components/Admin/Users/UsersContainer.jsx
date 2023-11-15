@@ -10,6 +10,8 @@ import Preloader from '../../Common/Preloader/Preloader';
 import {compose} from "redux";
 import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../../redux/users-selectors";
 import ModalAddUser from "../ModalAddUser/ModalAddUser";
+import FindUser from "../FindUser/FindUser";
+import styleCSS from './User.module.css';
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -22,11 +24,19 @@ class UsersAPIComponent extends React.Component {
 
     render() {
         return <div>
-            <ModalAddUser
-                onAddUser={this.props.addUserThunkCreator}
-                pageSize={this.props.pageSize}
-                currentPage={this.props.currentPage}
-            />
+            <div className={styleCSS.containerMenu}>
+                <ModalAddUser
+                    onAddUser={this.props.addUserThunkCreator}
+                    pageSize={this.props.pageSize}
+                    currentPage={this.props.currentPage}
+                />
+
+                <FindUser
+                    onGetUser={this.props.getUsersThunkCreator}
+                    pageSize={this.props.pageSize}
+                    currentPage={this.props.currentPage}
+                />
+            </div>
 
             {this.props.isFetching ? <Preloader/> : null}
             <Users totalCount={this.props.totalCount}
