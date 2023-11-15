@@ -14,7 +14,6 @@ const FindUserForm = (props) => {
                            validate={[required, maxLengthCreator(40)]}/>
                 </div>
                 <div>
-                    <button type="submit" className={styleCSS.menuMark}>Find by id</button>
                     <button type="submit" className={styleCSS.menuMark}>Find by first name</button>
                 </div>
             </div>

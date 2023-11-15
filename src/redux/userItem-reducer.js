@@ -103,4 +103,18 @@ export const requestAddUsers = (page, pageSize, firstname) => {
     }
 }
 
+export const requestDeleteUsers = (id) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true));
+        try {
+            usersAPI.deleteUsers(id).then(data => {
+                dispatch(toggleIsFetching(false));
+                // dispatch(setBD(data.items));
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
 export default userItemReducer;

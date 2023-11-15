@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {
     requestAddUsers,
-    requestUsers
+    requestUsers,
+    requestDeleteUsers
 } from '../../../redux/userItem-reducer';
 import Users from './Users';
 import Preloader from '../../Common/Preloader/Preloader';
@@ -10,7 +11,7 @@ import Preloader from '../../Common/Preloader/Preloader';
 import {compose} from "redux";
 import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../../redux/users-selectors";
 import ModalAddUser from "../ModalAddUser/ModalAddUser";
-import FindUser from "../FindUser/FindUser";
+import FindUser from "../ModalFindUser/FindUser";
 import styleCSS from './User.module.css';
 
 class UsersAPIComponent extends React.Component {
@@ -44,6 +45,7 @@ class UsersAPIComponent extends React.Component {
                    currentPage={this.props.currentPage}
                    onPageChanged={this.onPageChanged}
                    data={this.props.data}
+                   onDeleteUser={this.props.deleteUsersThunkCreator}
             />
         </div>
     }
@@ -63,7 +65,8 @@ let mapStateToProps = (state) => {
 export default compose(
     connect(mapStateToProps, {
         addUserThunkCreator: requestAddUsers,
-        getUsersThunkCreator: requestUsers
+        getUsersThunkCreator: requestUsers,
+        deleteUsersThunkCreator: requestDeleteUsers
     })
     //,
     //withAuthRedirect

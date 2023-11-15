@@ -38,6 +38,16 @@ export const usersAPI = {
         } catch (error) {
             console.error('Error:', error);
         }
+    },
+
+    async deleteUsers(id: string) {
+        endpoint = endpoint + id;
+        try {
+            const response = await instance.delete(`${endpoint}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
 }
 
