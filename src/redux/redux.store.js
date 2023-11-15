@@ -4,7 +4,6 @@ import firmReducer from './firm-reducer';
 import userReducer from './userItem-reducer';
 import thunkMiddleware from "redux-thunk";
 import { reducer as formReducer } from 'redux-form';
-import formFindReducer from "./formFindReducer";
 
 let reducers = combineReducers({
     servicesData: servicesItemReducer,
