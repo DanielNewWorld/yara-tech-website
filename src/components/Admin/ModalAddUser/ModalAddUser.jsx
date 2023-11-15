@@ -34,14 +34,14 @@ const AddUserReduxForm = reduxForm({
 })(AddUserForm)
 
 const ModalAddUser = (props) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isModalOpenAdd, setIsModalOpenAdd] = useState(false);
 
     const openModal = () => {
-        setIsModalOpen(true);
+        setIsModalOpenAdd(true);
     };
 
     const closeModal = () => {
-        setIsModalOpen(false);
+        setIsModalOpenAdd(false);
     };
 
     const onSubmit = (formData) => {
@@ -54,7 +54,7 @@ const ModalAddUser = (props) => {
         <div>
             <button className={styleCSS.menuMark} onClick={openModal}>Add client</button>
 
-            {isModalOpen && (
+            {isModalOpenAdd && (
                 <div className={styleCSS.modalOverlay}>
                     <div className={styleCSS.modalContent}>
                         <AddUserReduxForm onSubmit={onSubmit}/>
