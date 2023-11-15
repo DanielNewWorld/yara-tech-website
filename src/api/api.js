@@ -48,6 +48,22 @@ export const usersAPI = {
         } catch (error) {
             console.error('Error:', error);
         }
+    },
+
+    async updateUsers(currentPage = 1, pageSize = 10, firstname: string, id: string) {
+        endpoint = endpoint + id;
+        const dataUpdate = {
+            firstname: firstname,
+        };
+
+        // console.log(currentPage + "   " + pageSize + "   " + firstname + "   " + id)
+        try {
+            const response = await instance.put(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`,
+                dataUpdate);
+            return response.data;
+        } catch (error) {
+            console.error('Error:', error);
+        }
     }
 }
 

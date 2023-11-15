@@ -13,10 +13,12 @@ let Users = (props) => {
 
         <div>
             {props.data.map(u => <User user={u}
-                                 key={u._id}
-                                 pageSize={props.pageSize}
-                                 currentPage={props.currentPage}
-                                 onDeleteUser={props.onDeleteUser}/>
+                                       key={u._id}
+                                       pageSize={props.pageSize}
+                                       currentPage={props.currentPage}
+                                       onDeleteUser={props.onDeleteUser}
+                                       onUpdateUser={props.onUpdateUser}
+                />
             )}</div>
 
         <UsersTable/>

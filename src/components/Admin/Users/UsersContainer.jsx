@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {
     requestAddUsers,
     requestUsers,
-    requestDeleteUsers
+    requestDeleteUsers, requestUpdateUsers
 } from '../../../redux/userItem-reducer';
 import Users from './Users';
 import Preloader from '../../Common/Preloader/Preloader';
@@ -50,6 +50,7 @@ class UsersAPIComponent extends React.Component {
                    onPageChanged={this.onPageChanged}
                    data={this.props.data}
                    onDeleteUser={this.props.deleteUsersThunkCreator}
+                   onUpdateUser={this.props.updateUsersThunkCreator}
             />
         </div>
     }
@@ -70,7 +71,8 @@ export default compose(
     connect(mapStateToProps, {
         addUserThunkCreator: requestAddUsers,
         getUsersThunkCreator: requestUsers,
-        deleteUsersThunkCreator: requestDeleteUsers
+        deleteUsersThunkCreator: requestDeleteUsers,
+        updateUsersThunkCreator: requestUpdateUsers
     })
     //,
     //withAuthRedirect
