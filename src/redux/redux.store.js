@@ -3,7 +3,7 @@ import servicesItemReducer from './servicesItem-reducer';
 import firmReducer from './firm-reducer';
 import userReducer from './userItem-reducer';
 import thunkMiddleware from "redux-thunk";
-import formFindReducer from "./formFindReducer";
+// import formFindReducer from "./formFindReducer";
 import { reducer as formReducer } from 'redux-form';
 // import formFindReducer from "./formFindReducer";
 // import formAddReducer from "./formAddReducer";
