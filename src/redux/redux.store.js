@@ -1,8 +1,9 @@
-import {applyMiddleware, combineReducers, compose, legacy_createStore as createStore} from "redux";
+import {combineReducers, legacy_createStore as createStore} from "redux";
+// import {applyMiddleware, combineReducers, compose, legacy_createStore as createStore} from "redux";
 import servicesItemReducer from './servicesItem-reducer';
 import firmReducer from './firm-reducer';
 import userReducer from './userItem-reducer';
-import thunkMiddleware from "redux-thunk";
+// import thunkMiddleware from "redux-thunk";
 // import formFindReducer from "./formFindReducer";
 import { reducer as formReducer } from 'redux-form';
 // import formFindReducer from "./formFindReducer";
