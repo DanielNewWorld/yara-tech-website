@@ -22,7 +22,7 @@ const FindUserForm = (props) => {
 }
 
 const FindUserReduxForm = reduxForm({
-    form2: 'findUser'
+    form: 'findUser'
 })(FindUserForm)
 
 const FindUser = (props) => {
