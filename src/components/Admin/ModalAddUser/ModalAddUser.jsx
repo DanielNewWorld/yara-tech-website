@@ -30,7 +30,7 @@ const AddUserForm = (props) => {
 }
 
 const AddUserReduxForm = reduxForm({
-    form: 'addUser'
+    form1: 'addUser'
 })(AddUserForm)
 
 const ModalAddUser = (props) => {
