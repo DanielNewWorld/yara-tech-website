@@ -21,13 +21,14 @@ let reducers = combineReducers({
     // elementUser: formUpdateReducer
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducers, composeEnhancers(
-    applyMiddleware(thunkMiddleware)
-));
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const store = createStore(reducers, composeEnhancers(
+//     applyMiddleware(thunkMiddleware)
+// ));
 
 //let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
+const store = createStore(reducers);
 window.__store__ = store;
 
 export default store;
