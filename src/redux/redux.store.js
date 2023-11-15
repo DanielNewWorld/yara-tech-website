@@ -4,8 +4,8 @@ import firmReducer from './firm-reducer';
 import userReducer from './userItem-reducer';
 import thunkMiddleware from "redux-thunk";
 // import { reducer as formReducer } from 'redux-form';
-// import formFindReducer from "./formFindReducer";
-// import formAddReducer from "./formAddReducer";
+import formFindReducer from "./formFindReducer";
+import formAddReducer from "./formAddReducer";
 // import formDeleteReducer from "./formDeleteReducer";
 // import formUpdateReducer from "./formUpdateReducer";
 
@@ -14,8 +14,8 @@ let reducers = combineReducers({
     firmData: firmReducer,
     userData: userReducer,
     // form: formReducer,
-    // addUser: formAddReducer,
-    // findUser: formFindReducer,
+    form1: formAddReducer,
+    form2: formFindReducer,
     // deleteUser: formDeleteReducer,
     // elementUser: formUpdateReducer
 });
