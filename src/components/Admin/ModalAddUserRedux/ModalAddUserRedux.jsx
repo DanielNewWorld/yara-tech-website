@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 // import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalAddUserRedux.module.css';
-import {containsDigitsValidator} from "../../../utils/validators/validators";
+import {containsDigitsValidator, required} from "../../../utils/validators/validators";
 
 const MyForm = reduxForm({ form: 'addUser' })((props) => {
     const { handleSubmit } = props;
@@ -19,6 +19,7 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
                     component={Input}
                     name={"firstname"}
                     // validate={[required, maxLengthCreator(40)]}
+                    validate={[required]}
                 />
             </div>
             <div className={styleCSS.MuiFormControlRoot}>
