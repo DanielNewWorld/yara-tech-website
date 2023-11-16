@@ -39,7 +39,6 @@ const DeleteUser = (props) => {
 
     return (
         <div>
-            {/*<button className={styleCSS.menuMark} onClick={openModal}>Delete client</button>*/}
             <img className={styleCSS.imgItem} alt="userDel"
                  src={userDelIMG} onClick={openModal}></img>
 

@@ -12,7 +12,7 @@ import {compose} from "redux";
 import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../../redux/users-selectors";
 import FindUser from "../ModalFindUser/FindUser";
 import styleCSS from './User.module.css';
-import ModalFormRedux from "../ModalFormRedux/ModalFormRedux";
+import ModalAddUserRedux from "../ModalAddUserRedux/ModalAddUserRedux";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -30,7 +30,7 @@ class UsersAPIComponent extends React.Component {
     render() {
         return <div>
                 <div className={styleCSS.containerMenu}>
-                    <ModalFormRedux
+                    <ModalAddUserRedux
                         onAddUser={this.props.addUserThunkCreator}
                         pageSize={this.props.pageSize}
                         currentPage={this.props.currentPage}

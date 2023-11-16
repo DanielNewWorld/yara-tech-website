@@ -3,7 +3,7 @@ import { Button, Modal} from '@material-ui/core';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 // import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
-import styleCSS from './ModalFormRedux.module.css';
+import styleCSS from './ModalAddUserRedux.module.css';
 
 const MyForm = reduxForm({ form: 'addUser' })((props) => {
     const { handleSubmit } = props;
@@ -33,8 +33,7 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
     );
 });
 
-const ModalFormRedux = (props) => {
-    // const dispatch = useDispatch();
+const ModalAddUserRedux = (props) => {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
@@ -42,7 +41,6 @@ const ModalFormRedux = (props) => {
 
     const onSubmit = (data) => {
         props.onAddUser(props.currentPage, props.pageSize, data.firstname);
-        // alert(data.firstname);
         handleClose();
     };
 
@@ -61,4 +59,4 @@ const ModalFormRedux = (props) => {
     );
 };
 
-export default ModalFormRedux;
+export default ModalAddUserRedux;
