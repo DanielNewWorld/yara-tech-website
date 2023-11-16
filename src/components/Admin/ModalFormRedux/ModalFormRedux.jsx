@@ -3,19 +3,9 @@ import { Button, Modal, TextField } from '@material-ui/core';
 import { useDispatch} from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
-import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalFormRedux.module.css';
-import {SUBMIT_FORM} from "../../../redux/formAddReducer";
-
-const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
-    <TextField
-        label={label}
-        error={touched && !!error}
-        helperText={touched && error}
-        {...input}
-        {...custom}
-    />
-);
+// import {SUBMIT_FORM} from "../../../redux/formAddReducer";
 
 const MyForm = reduxForm({ form: 'myForm' })((props) => {
     const { handleSubmit } = props;
@@ -35,11 +25,8 @@ const MyForm = reduxForm({ form: 'myForm' })((props) => {
                 />
             </div>
             <div className={styleCSS.MuiFormControlRoot}>
-                <Field
-                    name="lastName"
-                    component={renderTextField}
-                    label="Last Name"
-                />
+                <Field type="text" placeholder="Phone" component={Input} name={"phone"}
+                       validate={[required, maxLengthCreator(20), containsDigitsValidator]}/>
             </div>
             <Button className={styleCSS.button} type="submit" color="primary" variant="contained">
                 Submit
