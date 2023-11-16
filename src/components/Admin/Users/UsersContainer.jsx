@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {connect, Provider} from 'react-redux';
+import React from 'react';
+import {connect} from 'react-redux';
 import {
     requestAddUsers,
     requestUsers,
@@ -8,12 +8,11 @@ import {
 import Users from './Users';
 import Preloader from '../../Common/Preloader/Preloader';
 // import {withAuthRedirect} from "../../hoc/withAuthRedirect";
-import {combineReducers, compose, createStore} from "redux";
+import {compose} from "redux";
 import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers} from "../../../redux/users-selectors";
-import ModalAddUser from "../ModalAddUser/ModalAddUser";
+// import ModalAddUser from "../ModalAddUser/ModalAddUser";
 import FindUser from "../ModalFindUser/FindUser";
 import styleCSS from './User.module.css';
-import ModalForm from "../ModalForm/ModalForm";
 import ModalFormContainer from "../ModalForm/ModalFormContainer";
 
 class UsersAPIComponent extends React.Component {
@@ -38,7 +37,6 @@ class UsersAPIComponent extends React.Component {
     };
 
     render() {
-        const {showModal} = true
         return <div>
                 <div className={styleCSS.containerMenu}>
                     <ModalFormContainer/>
