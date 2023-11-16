@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Button, Modal} from '@material-ui/core';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
-import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
+// import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalFormRedux.module.css';
 
 const MyForm = reduxForm({ form: 'addUser' })((props) => {
