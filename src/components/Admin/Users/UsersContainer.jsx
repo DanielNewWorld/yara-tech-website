@@ -28,20 +28,11 @@ class UsersAPIComponent extends React.Component {
         this.props.getUsersThunkCreator(pageNumber, this.props.pageSize);
     }
 
-    handleOpenModal = () => {
-        this.setState({showModal: true});
-    };
-
-    handleCloseModal = () => {
-        this.setState({showModal: false});
-    };
-
     render() {
         return <div>
                 <div className={styleCSS.containerMenu}>
                     <ModalFormRedux/>
 
-                    <button onClick={this.handleOpenModal}>Open Form</button>
                     {/*<ModalAddUser*/}
                     {/*    // showModal={showModal} handleCloseModal={this.handleCloseModal}*/}
                     {/*    onAddUser={this.props.addUserThunkCreator}*/}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Button, Modal, TextField } from '@material-ui/core';
-import { useDispatch} from 'react-redux';
+import { Button, Modal} from '@material-ui/core';
+// import { useDispatch} from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
@@ -36,7 +36,7 @@ const MyForm = reduxForm({ form: 'myForm' })((props) => {
 });
 
 const ModalFormRedux = () => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
@@ -50,8 +50,8 @@ const ModalFormRedux = () => {
 
     return (
         <div>
-            <Button onClick={handleOpen} color="primary" variant="contained" className={styleCSS.ButtonOpenModal}>
-                Open Modal
+            <Button onClick={handleOpen} className={styleCSS.menuMark}>
+                Add client
             </Button>
             <Modal open={open} onClose={handleClose} className={styleCSS.ModalForm}>
                 <div>
