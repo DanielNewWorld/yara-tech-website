@@ -5,18 +5,16 @@ import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalFormRedux.module.css';
-// import {SUBMIT_FORM} from "../../../redux/formAddReducer";
+import {SUBMIT_FORM} from "../../../redux/formAddReducer";
 
-const MyForm = reduxForm({ form: 'myForm' })((props) => {
+const MyForm = reduxForm({ form: 'addUser' })((props) => {
     const { handleSubmit } = props;
 
     return (
         <form onSubmit={handleSubmit} className={styleCSS.form}>
             <div className={styleCSS.MuiFormControlRoot}>
                 <Field
-                    // component={renderTextField}
                     label="First Name"
-
                     type="text"
                     placeholder="First Name"
                     component={Input}
@@ -26,6 +24,7 @@ const MyForm = reduxForm({ form: 'myForm' })((props) => {
             </div>
             <div className={styleCSS.MuiFormControlRoot}>
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
+                       label="Phone"
                        validate={[required, maxLengthCreator(20), containsDigitsValidator]}/>
             </div>
             <Button className={styleCSS.button} type="submit" color="primary" variant="contained">
@@ -35,7 +34,7 @@ const MyForm = reduxForm({ form: 'myForm' })((props) => {
     );
 });
 
-const ModalFormRedux = () => {
+const ModalFormRedux = (props) => {
     // const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
 
@@ -43,8 +42,8 @@ const ModalFormRedux = () => {
     const handleClose = () => setOpen(false);
 
     const onSubmit = (data) => {
-        // dispatch({ type: SUBMIT_FORM, payload: data });
-        alert(data.firstname);
+        props.onAddUser(props.currentPage, props.pageSize, data.firstname);
+        // alert(data.firstname);
         handleClose();
     };
 

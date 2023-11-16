@@ -31,10 +31,13 @@ class UsersAPIComponent extends React.Component {
     render() {
         return <div>
                 <div className={styleCSS.containerMenu}>
-                    <ModalFormRedux/>
+                    <ModalFormRedux
+                        onAddUser={this.props.addUserThunkCreator}
+                        pageSize={this.props.pageSize}
+                        currentPage={this.props.currentPage}
+                    />
 
                     {/*<ModalAddUser*/}
-                    {/*    // showModal={showModal} handleCloseModal={this.handleCloseModal}*/}
                     {/*    onAddUser={this.props.addUserThunkCreator}*/}
                     {/*    pageSize={this.props.pageSize}*/}
                     {/*    currentPage={this.props.currentPage}*/}
