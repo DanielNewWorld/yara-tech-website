@@ -14,7 +14,7 @@ export const maxLengthCreator = (maxLength = 20) => value => {
 }
 
 //ok
-export const containsDigitsValidator = (maxLength = 20) => value => {
+export const containsDigitsValidator = (maxLength = 20) => (value='') => {
     if (value) {
         if (value.length < 3) return `Min length is 3 symbols`;
         if (/^\d*$/.test(value)) {
