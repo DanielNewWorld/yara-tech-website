@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Modal} from '@material-ui/core';
-// import { useDispatch} from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalFormRedux.module.css';
-import {SUBMIT_FORM} from "../../../redux/formAddReducer";
 
 const MyForm = reduxForm({ form: 'addUser' })((props) => {
     const { handleSubmit } = props;
