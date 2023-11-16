@@ -1,27 +1,12 @@
-// Import необходимых компонентов из Material-UI и Redux
 import React, { useState } from 'react';
 import { Button, Modal, TextField } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalFormRedux.module.css';
+import {SUBMIT_FORM} from "../../../redux/formAddReducer";
 
-// Action creators и reducers ReduxForm
-const SUBMIT_FORM = 'SUBMIT_FORM';
-
-const formReducer = (state = {}, action) => {
-    switch (action.type) {
-        case SUBMIT_FORM:
-            // Обработка отправки формы, например, вызов API
-            console.log('Form submitted with data:', action.payload);
-            return state;
-        default:
-            return state;
-    }
-};
-
-// Компонент формы
 const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) => (
     <TextField
         label={label}
@@ -32,7 +17,6 @@ const renderTextField = ({ input, label, meta: { touched, error }, ...custom }) 
     />
 );
 
-// Создание ReduxForm
 const MyForm = reduxForm({ form: 'myForm' })((props) => {
     const { handleSubmit } = props;
 
@@ -64,7 +48,6 @@ const MyForm = reduxForm({ form: 'myForm' })((props) => {
     );
 });
 
-// Компонент модального окна с формой
 const ModalFormRedux = () => {
     const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
@@ -73,10 +56,8 @@ const ModalFormRedux = () => {
     const handleClose = () => setOpen(false);
 
     const onSubmit = (data) => {
-        // Диспатч Redux action с данными формы
         dispatch({ type: SUBMIT_FORM, payload: data });
         alert(data.firstname);
-        // Закрытие модального окна после отправки формы
         handleClose();
     };
 

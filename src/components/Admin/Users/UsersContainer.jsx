@@ -13,7 +13,6 @@ import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers
 // import ModalAddUser from "../ModalAddUser/ModalAddUser";
 import FindUser from "../ModalFindUser/FindUser";
 import styleCSS from './User.module.css';
-import ModalFormContainer from "../ModalForm/ModalFormContainer";
 import ModalFormRedux from "../ModalFormRedux/ModalFormRedux";
 
 class UsersAPIComponent extends React.Component {
