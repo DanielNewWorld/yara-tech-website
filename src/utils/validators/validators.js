@@ -1,11 +1,13 @@
+//ok
 export const required = value => {
     if (value) return undefined;
     return "Field is required";
 }
 
-export const maxLengthCreator = (maxLength) => (value) => {
-    if (value && value.length > maxLength) return `Max length is ${maxLength} symbols`;
-    return undefined;
+//error
+export const maxLengthCreator = (maxLength) => value => {
+    if (value && value.length > maxLength) return undefined;
+    return `Max length is ${maxLength} symbols`;
 }
 
 export const containsDigitsValidator = value => {

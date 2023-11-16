@@ -4,6 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 // import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 import styleCSS from './ModalAddUserRedux.module.css';
+import {containsDigitsValidator} from "../../../utils/validators/validators";
 
 const MyForm = reduxForm({ form: 'addUser' })((props) => {
     const { handleSubmit } = props;
@@ -24,6 +25,7 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
                        label="Phone"
                        // validate={[required, maxLengthCreator(20), containsDigitsValidator]}
+                       validate={[containsDigitsValidator]}
                 />
             </div>
             <Button className={styleCSS.button} type="submit" color="primary" variant="contained">
