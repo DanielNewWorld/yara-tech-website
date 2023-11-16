@@ -24,7 +24,7 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
             <div className={styleCSS.MuiFormControlRoot}>
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
                        label="Phone"
-                       // validate={[required, maxLengthCreator(20), containsDigitsValidator]}
+                       // validate={[maxLengthCreator(20)]}
                        validate={[containsDigitsValidator]}
                 />
             </div>

@@ -36,15 +36,6 @@ class UsersAPIComponent extends React.Component {
                         currentPage={this.props.currentPage}
                     />
 
-                    {/*<ModalAddUser*/}
-                    {/*    onAddUser={this.props.addUserThunkCreator}*/}
-                    {/*    pageSize={this.props.pageSize}*/}
-                    {/*    currentPage={this.props.currentPage}*/}
-                    {/*/>*/}
-
-
-                    {/*<Form1 showModal={showModal} handleCloseModal={handleCloseModal} />*/}
-
                     <FindUser
                         onGetUser={this.props.getUsersThunkCreator}
                         pageSize={this.props.pageSize}
