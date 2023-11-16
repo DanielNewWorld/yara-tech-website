@@ -25,7 +25,7 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
                        label="Phone"
                        // validate={[maxLengthCreator(20)]}
-                       validate={[containsDigitsValidator]}
+                       validate={[containsDigitsValidator(20)]}
                 />
             </div>
             <Button className={styleCSS.button} type="submit" color="primary" variant="contained">

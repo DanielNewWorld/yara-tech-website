@@ -12,9 +12,9 @@ export const maxLengthCreator = (maxLength = 20) => value => {
 }
 
 //ok
-export const containsDigitsValidator = value => {
+export const containsDigitsValidator = (maxLength = 20) => value => {
     if (/^\d*$/.test(value)) {
-        return undefined;
-    }
-    return 'Numbers must be entered';
+        if (value.length > maxLength) return `Max length is ${maxLength} symbols`
+        else return undefined;
+    } else return 'Numbers must be entered';
 };
