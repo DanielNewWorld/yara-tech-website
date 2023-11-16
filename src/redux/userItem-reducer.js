@@ -92,10 +92,12 @@ export const requestUsers = (page, pageSize, firstname) => {
 export const requestAddUsers = (page, pageSize, firstname) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(page));
         try {
             usersAPI.addUsers(page, pageSize, firstname).then(data => {
                 dispatch(toggleIsFetching(false));
                 dispatch(setBD(data.items));
+                dispatch(setTotalUserCount(data.totalCount));
             })
         } catch (error) {
             console.log(error);
@@ -106,10 +108,12 @@ export const requestAddUsers = (page, pageSize, firstname) => {
 export const requestDeleteUsers = (page, pageSize, firstname, id) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(page));
         try {
             usersAPI.deleteUsers(page, pageSize, firstname, id).then(data => {
                 dispatch(toggleIsFetching(false));
                 dispatch(setBD(data.items));
+                dispatch(setTotalUserCount(data.totalCount));
             })
         } catch (error) {
             console.log(error);
@@ -120,10 +124,12 @@ export const requestDeleteUsers = (page, pageSize, firstname, id) => {
 export const requestUpdateUsers = (page, pageSize, firstname, id) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(page));
         try {
             usersAPI.updateUsers(page, pageSize, firstname, id).then(data => {
                 dispatch(toggleIsFetching(false));
                 dispatch(setBD(data.items));
+                dispatch(setTotalUserCount(data.totalCount));
             })
         } catch (error) {
             console.log(error);
