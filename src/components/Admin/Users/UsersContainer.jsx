@@ -14,6 +14,7 @@ import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers
 import FindUser from "../ModalFindUser/FindUser";
 import styleCSS from './User.module.css';
 import ModalFormContainer from "../ModalForm/ModalFormContainer";
+import ModalFormRedux from "../ModalFormRedux/ModalFormRedux";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -39,7 +40,7 @@ class UsersAPIComponent extends React.Component {
     render() {
         return <div>
                 <div className={styleCSS.containerMenu}>
-                    <ModalFormContainer/>
+                    <ModalFormRedux/>
 
                     <button onClick={this.handleOpenModal}>Open Form</button>
                     {/*<ModalAddUser*/}

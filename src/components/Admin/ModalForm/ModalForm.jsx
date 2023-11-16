@@ -5,6 +5,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import TextField from '@mui/material/TextField';
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {Field} from "redux-form";
 
 const ModalForm = ({ isOpen, onClose }) => {
     const [formData, setFormData] = useState({
@@ -32,13 +34,14 @@ const ModalForm = ({ isOpen, onClose }) => {
         <Dialog open={isOpen} onClose={onClose}>
             <DialogTitle>Отправить данные</DialogTitle>
             <DialogContent>
-                <TextField
+                <Field
                     fullWidth
                     label="Имя"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     margin="normal"
+                    validate={[required, maxLengthCreator(40)]}
                 />
                 <TextField
                     fullWidth
