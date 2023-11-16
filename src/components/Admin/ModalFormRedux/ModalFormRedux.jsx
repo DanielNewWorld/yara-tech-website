@@ -56,7 +56,7 @@ const ModalFormRedux = () => {
     const handleClose = () => setOpen(false);
 
     const onSubmit = (data) => {
-        dispatch({ type: SUBMIT_FORM, payload: data });
+        // dispatch({ type: SUBMIT_FORM, payload: data });
         alert(data.firstname);
         handleClose();
     };

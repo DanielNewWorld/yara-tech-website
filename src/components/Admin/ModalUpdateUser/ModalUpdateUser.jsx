@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styleCSS from './ElementUser.module.css';
+import styleCSS from './ModalUpdateUser.module.css';
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
@@ -25,7 +25,7 @@ const ElementUserReduxForm = reduxForm({
     form: 'elementUser'
 })(ElementUserForm)
 
-const ElementUser = (props) => {
+const ModalUpdateUser = (props) => {
     const [isModalOpenUpdate, setIsModalOpenUpdate] = useState(false);
 
     const openModal = () => {
@@ -58,4 +58,4 @@ const ElementUser = (props) => {
     );
 };
 
-export default ElementUser;
+export default ModalUpdateUser;
