@@ -3,7 +3,7 @@ import { Button, Modal} from '@material-ui/core';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import styleCSS from './ModalAddUserRedux.module.css';
-import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
+import {required} from "../../../utils/validators/validators";
 
 const MyForm = reduxForm({ form: 'addUser' })((props) => {
     const { handleSubmit } = props;
@@ -17,13 +17,13 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
                     placeholder="First Name"
                     component={Input}
                     name={"firstname"}
-                    validate={[required, maxLengthCreator()]}
+                    validate={[required]}
                 />
             </div>
             <div className={styleCSS.MuiFormControlRoot}>
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
                        label="Phone"
-                       validate={[required, containsDigitsValidator()]}
+                       validate={[required]}
                 />
             </div>
             <Button className={styleCSS.button} type="submit" color="primary" variant="contained">

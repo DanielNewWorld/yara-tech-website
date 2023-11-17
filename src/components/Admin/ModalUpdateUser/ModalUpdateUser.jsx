@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styleCSS from './ModalUpdateUser.module.css';
 import {Field, reduxForm} from "redux-form";
 import {Input} from "../../Common/FormsControls/FormsControls";
-import {maxLengthCreator, required} from "../../../utils/validators/validators";
+import {required} from "../../../utils/validators/validators";
 
 const ElementUserForm = (props) => {
     return (
@@ -11,7 +11,7 @@ const ElementUserForm = (props) => {
                 <div><h3>Enter new client details</h3></div>
                 <div>
                     <Field type="text" placeholder={props.firstname} component={Input} name={"firstnameUpdate"}
-                           validate={[required, maxLengthCreator()]}
+                           validate={[required]}
                     />
                 </div>
                 <div>
