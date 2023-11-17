@@ -8,15 +8,23 @@ export type UserCreateModel = {
     firstname: string
 }
 
+const baseURL = 'https://main--warm-phoenix-949f5d.netlify.app/api';
 let endpoint = "/"
 
 const instance = axios.create({
     withCredentials: true,
-    baseURL: 'https://main--warm-phoenix-949f5d.netlify.app/api',
+    baseURL: baseURL,
     headers: {
         'Authorization': `Basic ${basicAuthCredentials}`,
     },
 })
+
+export const authAPI = {
+    async me() {
+        return await axios.get(`${baseURL}/auth`,
+            {withCredentials: true});
+    }
+}
 
 export const usersAPI = {
     async getUsers(currentPage = 1, pageSize = 10, firstname = '') {
@@ -66,9 +74,3 @@ export const usersAPI = {
         }
     }
 }
-
-// export const authAPI = {
-//     me() {
-//         return instance.get(`auth/me`);
-//     }
-// }

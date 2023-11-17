@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { Button, Modal} from '@material-ui/core';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import styleCSS from './ModalAddUserRedux.module.css';
-import {required} from "../../../utils/validators/validators";
+import {containsDigitsValidator, required} from "../../../utils/validators/validators";
 
-const MyForm = reduxForm({ form: 'addUser' })((props) => {
-    const { handleSubmit } = props;
-
+const AddForm = reduxForm({ form: 'addUser' })((props) => {
     return (
-        <form onSubmit={handleSubmit} className={styleCSS.form}>
-            <div className={styleCSS.MuiFormControlRoot}>
+        <form onSubmit={props.handleSubmit}>
+            <div className={styleCSS.container}>
+                <div><h3>Add client</h3></div>
                 <Field
                     label="First Name"
                     type="text"
@@ -20,21 +18,19 @@ const MyForm = reduxForm({ form: 'addUser' })((props) => {
                     validate={[required]}
                 />
             </div>
-            <div className={styleCSS.MuiFormControlRoot}>
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
                        label="Phone"
-                       validate={[required]}
+                       validate={[required, containsDigitsValidator]}
                 />
-            </div>
-            <Button className={styleCSS.button} type="submit" color="primary" variant="contained">
-                Submit
-            </Button>
+            <button className={styleCSS.menuMark} type="submit">
+                Add client
+            </button>
         </form>
     );
 });
 
 const ModalAddUserRedux = (props) => {
-    const [open, setOpen] = useState(false);
+    const [isModalOpenAdd, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -46,15 +42,18 @@ const ModalAddUserRedux = (props) => {
 
     return (
         <div>
-            <Button onClick={handleOpen} className={styleCSS.menuMark}>
+            <button onClick={handleOpen} className={styleCSS.menuMark}>
                 Add client
-            </Button>
-            <Modal open={open} onClose={handleClose} className={styleCSS.ModalForm}>
-                <div>
-                    <h2>Modal Form</h2>
-                    <MyForm onSubmit={onSubmit} />
+            </button>
+
+            {isModalOpenAdd && (
+            <div className={styleCSS.modalOverlay}>
+                <div className={styleCSS.modalContent}>
+                    <AddForm onSubmit={onSubmit} />
+                    <button onClick={handleClose}>Close</button>
                 </div>
-            </Modal>
+            </div>
+                )}
         </div>
     );
 };
