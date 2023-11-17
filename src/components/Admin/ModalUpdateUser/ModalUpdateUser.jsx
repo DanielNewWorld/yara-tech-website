@@ -11,8 +11,7 @@ const ElementUserForm = (props) => {
                 <div><h3>Enter new client details</h3></div>
                 <div>
                     <Field type="text" placeholder={props.firstname} component={Input} name={"firstnameUpdate"}
-                           // validate={[required, maxLengthCreator(40)]}
-                           validate={[maxLengthCreator(20)]}
+                           validate={[maxLengthCreator()]}
                     />
                 </div>
                 <div>
