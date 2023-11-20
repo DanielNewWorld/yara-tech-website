@@ -1,5 +1,4 @@
 import axios from "axios";
-import * as bcrypt from "bcrypt";
 
 export const username = 'Daniel';
 export const password = 'danielTOVARKA';
@@ -53,10 +52,8 @@ export const usersAPI = {
     async getUsers(login, password, currentPage = 1, pageSize = 10, firstname = '') {
         // login = 'Daniel';
         // password = 'danielTOVARKA';
-        const saltRounds = 10;
-        const hashedPassword = await bcrypt.hash(password, saltRounds);
 
-        const basicAuthCredentials = btoa(`${login}:${hashedPassword}`);
+        const basicAuthCredentials = btoa(`${login}:${password}`);
         console.log("login-pass: " + login + "  " + password)
         const find = 'firstname=' + firstname
 
