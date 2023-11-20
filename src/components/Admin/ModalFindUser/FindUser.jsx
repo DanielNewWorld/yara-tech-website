@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import styleCSS from './FindUser.module.css';
 import {Input} from "../../Common/FormsControls/FormsControls";
-import {required} from "../../../utils/validators/validators";
+import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Field, reduxForm} from "redux-form";
+
+const maxLength = maxLengthCreator(10);
 
 const FindUserForm = (props) => {
     return (
@@ -11,7 +13,7 @@ const FindUserForm = (props) => {
                 <div><h3>Сlient search</h3></div>
                 <div>
                     <Field type="text" placeholder="Find by..." component={Input} name={"find"}
-                           validate={[required]}
+                           validate={[required, maxLength]}
                     />
                 </div>
                 <div>

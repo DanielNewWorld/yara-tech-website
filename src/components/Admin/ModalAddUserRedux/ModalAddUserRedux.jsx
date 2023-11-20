@@ -22,7 +22,7 @@ const AddForm = reduxForm({ form: 'addUser' })((props) => {
             </div>
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}
                        label="Phone"
-                       validate={[required, containsDigitsValidator]}
+                       validate={[required, containsDigitsValidator, maxLength]}
                 />
             <button className={styleCSS.menuMark} type="submit">
                 Add client
