@@ -1,7 +1,8 @@
 import axios from "axios";
+import * as bcrypt from "bcrypt";
 
-export const username = 'admin';
-export const password = 'qwerty';
+export const username = 'Daniel';
+export const password = 'danielTOVARKA';
 const basicAuthCredentials = btoa(`${username}:${password}`);
 
 export type UserCreateModel = {
@@ -20,13 +21,25 @@ const instance = axios.create({
 })
 
 export const authAPI = {
-    async me() {
-        return await axios.get(`${baseURL}/auth/me`,
-            {withCredentials: true});
+    async me(login, password) {
+        const basicAuthCredentials = btoa(`${login}:${password}`);
+        return await axios.get(`${baseURL}/auth/me`, {
+                withCredentials: true,
+                headers: {
+                    'Authorization': `Basic ${basicAuthCredentials}`,
+                }
+            }
+        );
     },
 
     async login(login: string, password: string, rememberMe: boolean = false) {
-        return await axios.post(`${baseURL}/auth/login`, {login, password, rememberMe},
+        const data = {
+            login: login,
+            password: password,
+            rememberMe: false
+        };
+
+        return await axios.post(`${baseURL}/auth/login`, data,
             {withCredentials: true});
     },
 
@@ -37,8 +50,24 @@ export const authAPI = {
 }
 
 export const usersAPI = {
-    async getUsers(currentPage = 1, pageSize = 10, firstname = '') {
+    async getUsers(login, password, currentPage = 1, pageSize = 10, firstname = '') {
+        // login = 'Daniel';
+        // password = 'danielTOVARKA';
+        const saltRounds = 10;
+        const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+        const basicAuthCredentials = btoa(`${login}:${hashedPassword}`);
+        console.log("login-pass: " + login + "  " + password)
         const find = 'firstname=' + firstname
+
+        const instance = axios.create({
+            withCredentials: true,
+            baseURL: baseURL,
+            headers: {
+                'Authorization': `Basic ${basicAuthCredentials}`,
+            },
+        })
+
         try {
             const response = await instance.get(`?page=${currentPage}&pageSize=${pageSize}&${find}`)
             return response.data;
@@ -48,6 +77,8 @@ export const usersAPI = {
     },
 
     async addUsers(currentPage = 1, pageSize = 10, firstname: string) {
+        // const basicAuthCredentials = btoa(`${login}:${password}`);
+
         try {
             const response = await instance.post(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`, {
                 firstname: firstname
@@ -59,6 +90,8 @@ export const usersAPI = {
     },
 
     async deleteUsers(currentPage = 1, pageSize = 10, firstname: string, id: string) {
+        // const basicAuthCredentials = btoa(`${login}:${password}`);
+
         endpoint = id;
         try {
             const response = await instance.delete(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`);
@@ -69,6 +102,8 @@ export const usersAPI = {
     },
 
     async updateUsers(currentPage = 1, pageSize = 10, firstname: string, id: string) {
+        // const basicAuthCredentials = btoa(`${login}:${password}`);
+
         endpoint = endpoint + id;
         const dataUpdate = {
             firstname: firstname,

@@ -4,7 +4,7 @@ import {Input} from "../../Common/FormsControls/FormsControls";
 import styleCSS from './ModalAddUserRedux.module.css';
 import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
 
-const maxLength = maxLengthCreator(10);
+const maxLength = maxLengthCreator(20);
 
 const AddForm = reduxForm({ form: 'addUser' })((props) => {
     return (

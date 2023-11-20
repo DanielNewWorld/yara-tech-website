@@ -16,15 +16,15 @@ import ModalAddUserRedux from "../ModalAddUserRedux/ModalAddUserRedux";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
-        this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
+        this.props.getUsersThunkCreator(this.props.login, this.props.password, this.props.currentPage, this.props.pageSize);
     }
 
     componentDidUpdate(prevProps: Readonly<P>, prevState: Readonly<S>, snapshot: SS) {
-        // this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize);
+        // this.props.getUsersThunkCreator(this.props.login, this.props.password, this.props.currentPage, this.props.pageSize);
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.getUsersThunkCreator(pageNumber, this.props.pageSize);
+        this.props.getUsersThunkCreator(this.props.login, this.props.password, pageNumber, this.props.pageSize);
     }
 
     render() {
@@ -57,13 +57,15 @@ class UsersAPIComponent extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-
     return {
         data: getUsers(state),
         pageSize: getPageSize(state),
         totalCount: getTotalUsersCount(state),
         currentPage: getCurrentPage(state),
-        isFetching: getIsFetching(state)
+        isFetching: getIsFetching(state),
+        isAuth: state.auth.isAuth,
+        login: state.auth.login,
+        password: state.auth.password
     }
 }
 

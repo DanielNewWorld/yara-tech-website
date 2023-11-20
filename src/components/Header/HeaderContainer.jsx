@@ -5,7 +5,7 @@ import {getAuthAdminData} from "../../redux/auth-reducer";
 
 class HeaderAPIComponent extends React.Component {
     async componentDidMount() {
-        this.props.getAuthAdminData()
+        this.props.getAuthAdminData(this.props.login, this.props.password)
     }
 
     render() {
@@ -16,9 +16,10 @@ class HeaderAPIComponent extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    data: state.firmData,
+    // data: state.firmData,
     isAuth: state.auth.isAuth,
-    login: state.auth.login
+    login: state.auth.login,
+    password: state.auth.password
 })
 
 const HeaderContainer

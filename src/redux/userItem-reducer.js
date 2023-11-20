@@ -72,21 +72,22 @@ const toggleIsFetching = (isFetching) => {
     }
 }
 
-export const requestUsers = (page, pageSize, firstname) => {
-    return (dispatch) => {
+export const requestUsers = (login, password, page, pageSize, firstname) => async (dispatch) => {
         dispatch(toggleIsFetching(true));
         dispatch(setCurrentPage(page));
         try {
-            usersAPI.getUsers(page, pageSize, firstname).then(data => {
+            const response = await usersAPI.getUsers(login, password, page, pageSize, firstname)
+            // console.log("login-pass" + login + "  " + password)
+            console.log("result data: " + response.data)
+            if (response.data && response.resultCode === 0) {
                 dispatch(toggleIsFetching(false));
-                dispatch(setBD(data.items));
-                dispatch(setTotalUserCount(data.totalCount));
-                // console.log("items: " + data.items[0].id)
-            })
+                console.log("result users: " + response.resultCode)
+                // dispatch(setBD(data.items));
+                // dispatch(setTotalUserCount(data.totalCount));
+            }
         } catch (error) {
             console.log(error);
         }
-    }
 }
 
 export const requestAddUsers = (page, pageSize, firstname) => {

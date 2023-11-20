@@ -4,7 +4,7 @@ import {Input} from "../../Common/FormsControls/FormsControls";
 import {maxLengthCreator, required} from "../../../utils/validators/validators";
 import {Field, reduxForm} from "redux-form";
 
-const maxLength = maxLengthCreator(10);
+const maxLength = maxLengthCreator(20);
 
 const FindUserForm = (props) => {
     return (
