@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import {Input} from "../../Common/FormsControls/FormsControls";
 import styleCSS from './ModalAddUserRedux.module.css';
-import {containsDigitsValidator, required} from "../../../utils/validators/validators";
+import {containsDigitsValidator, maxLengthCreator, required} from "../../../utils/validators/validators";
+
+const maxLength = maxLengthCreator(10);
 
 const AddForm = reduxForm({ form: 'addUser' })((props) => {
     return (
@@ -15,7 +17,7 @@ const AddForm = reduxForm({ form: 'addUser' })((props) => {
                     placeholder="First Name"
                     component={Input}
                     name={"firstname"}
-                    validate={[required]}
+                    validate={[required, maxLength]}
                 />
             </div>
                 <Field type="text" placeholder="Phone" component={Input} name={"phone"}

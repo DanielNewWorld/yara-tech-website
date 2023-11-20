@@ -21,7 +21,7 @@ const instance = axios.create({
 
 export const authAPI = {
     async me() {
-        return await axios.get(`${baseURL}/auth`,
+        return await axios.get(`${baseURL}/auth/me`,
             {withCredentials: true});
     }
 }
