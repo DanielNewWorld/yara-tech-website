@@ -23,6 +23,16 @@ export const authAPI = {
     async me() {
         return await axios.get(`${baseURL}/auth/me`,
             {withCredentials: true});
+    },
+
+    async login(login: string, password: string, rememberMe: boolean = false) {
+        return await axios.post(`${baseURL}/auth/login`, {login, password, rememberMe},
+            {withCredentials: true});
+    },
+
+    async logout() {
+        return await axios.delete(`${baseURL}/auth/logout`,
+            {withCredentials: true});
     }
 }
 

@@ -1,8 +1,10 @@
 import React from 'react';
-// import styleCSS from './Login.module.css';
+import styleCSS from './Login.module.css';
 import {Field, reduxForm} from "redux-form";
 import {required} from "../../../utils/validators/validators";
 import {Input} from "../../Common/FormsControls/FormsControls";
+import {connect} from "react-redux";
+import {login} from "../../../redux/auth-reducer";
 
 const LoginForm = (props) => {
     return (
@@ -12,12 +14,13 @@ const LoginForm = (props) => {
                            validate={[required]}/>
                 </div>
                 <div>
-                    <Field type="text" placeholder="Password" component={Input} name={"password"}
+                    <Field placeholder="Password" component={Input} name={"password"} type={"password"}
                            validate={[required]}/>
                 </div>
-                {/*<div>*/}
-                {/*    <Field component={Input} type="checkbox" name={"rememberMe"}/> remember me*/}
-                {/*</div>*/}
+                <div className={styleCSS.checkbox}>
+                    <Field component={Input} type="checkbox" name={"rememberMe"}/>
+                    <label htmlFor="myCheckbox">remember me</label>
+                </div>
                 <div>
                     <button>Login</button>
                 </div>
@@ -32,7 +35,8 @@ const LoginReduxForm = reduxForm({
 const Login = (props) => {
     const onSubmit = (formData) => {
         console.log(formData)
-        alert(formData.password);
+        // alert(formData.password);
+        props.login(formData.login, formData.password, formData.rememberMe)
     }
 
     return (
@@ -43,4 +47,4 @@ const Login = (props) => {
     );
 };
 
-export default Login
+export default connect (null, {login})(Login)

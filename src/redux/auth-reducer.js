@@ -1,3 +1,5 @@
+import {authAPI} from "../api/api";
+
 const SET_ADMIN_DATA = 'SET_ADMIN_DATA';
 
 let initialState = {
@@ -12,7 +14,7 @@ const authReducer = (state = initialState, action) => {
         case SET_ADMIN_DATA:
             return {
                 ...state,
-                ...action.data,
+                ...action.payload,
                 isAuth: true
             }
 
@@ -21,24 +23,50 @@ const authReducer = (state = initialState, action) => {
     }
 }
 
-export const setAuthAdminData = (adminID, login, password) => {
+export const setAuthAdminData = (adminID, login, password, isAuth) => {
     return {
         type: SET_ADMIN_DATA,
-        data: {adminID, login, password}
+        payload: {adminID, login, password, isAuth}
     }
 }
 
-// export const requestAuth = (page, pageSize, firstname) => {
-//     return (dispatch) => {
-//         try {
-//             usersAPI.getUsers(page, pageSize, firstname).then(data => {
-//                 dispatch(setAuthAdminData(data.items));
-//                 // console.log("items: " + data.items[0].id)
-//             })
-//         } catch (error) {
-//             console.log(error);
-//         }
-//     }
-// }
+export const getAuthAdminData = () => async (dispatch) => {
+    const response = await authAPI.me();
+    console.log(response.data)
+    if (response.data.resultCode === 0) {
+        let {_id, login, password} = response.data.data;
+        dispatch(setAuthAdminData(_id, login, password, true))
+    }
+}
+
+export const login = (login, password, rememberMe) => {
+    return (dispatch) => {
+        try {
+            const response = authAPI.login(login, password, rememberMe).then(data => {
+                // console.log("items: " + data.items[0].id)
+                if (response.data.resultCode === 0) {
+                    dispatch(getAuthAdminData());
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
+
+export const logout = () => {
+    return (dispatch) => {
+        try {
+            const response = authAPI.logout().then(data => {
+                // console.log("items: " + data.items[0].id)
+                if (response.data.resultCode === 0) {
+                    dispatch(setAuthAdminData(null, null, null, false))
+                }
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
 
 export default authReducer;
