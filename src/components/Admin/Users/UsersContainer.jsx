@@ -32,6 +32,10 @@ class UsersAPIComponent extends React.Component {
     render() {
         return <div>
                 <div className={styleCSS.containerMenu}>
+                    <button onClick={this.onPageChanged} className={styleCSS.menuMark}>
+                        All clients
+                    </button>
+
                     <ModalAddUserRedux
                         onAddUser={this.props.addUserThunkCreator}
                         pageSize={this.props.pageSize}

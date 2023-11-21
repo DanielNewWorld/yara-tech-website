@@ -3,7 +3,6 @@ import UsersContainer from "../Users/UsersContainer";
 import Preloader from "../../Common/Preloader/Preloader";
 import {Navigate} from "react-router-dom";
 import {connect} from "react-redux";
-import {login} from "../../../redux/auth-reducer";
 
 const AdminPanel = (props) => {
     if (props.isAuth) {
@@ -24,5 +23,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect (mapStateToProps, {})(AdminPanel)
-
-// export default AdminPanel;
