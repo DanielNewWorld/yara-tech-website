@@ -13,7 +13,10 @@ let User = (props) => {
                 onDeleteUser={props.onDeleteUser}
                 pageSize={props.pageSize}
                 currentPage={props.currentPage}
-                deleteID={props.user._id}/>
+                deleteID={props.user._id}
+                login={props.login}
+                password={props.password}
+            />
 
             {/*<div className={styleCSS.long}>{props.user.first_name}</div>*/}
             <ModalUpdateUser className={styleCSS.long}
@@ -22,6 +25,8 @@ let User = (props) => {
                              pageSize={props.pageSize}
                              currentPage={props.currentPage}
                              selectedID={props.user._id}
+                             login={props.login}
+                             password={props.password}
             />
 
             <div className={styleCSS.long}>{props.user._id}</div>

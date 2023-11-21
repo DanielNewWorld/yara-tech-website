@@ -41,7 +41,7 @@ const FindUser = (props) => {
 
     const onSubmit = (formData) => {
         // alert(formData.find);
-        props.onGetUser(props.currentPage,props.pageSize,formData.find)
+        props.onGetUser(props.login, props.password, props.currentPage,props.pageSize,formData.find)
         closeModal();
     };
 

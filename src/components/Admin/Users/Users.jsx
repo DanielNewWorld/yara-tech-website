@@ -8,7 +8,10 @@ let Users = (props) => {
         <Paginator currentPage={props.currentPage}
                    onPageChanged={props.onPageChanged}
                    totalCount={props.totalCount}
-                   pageSize={props.pageSize}/>
+                   pageSize={props.pageSize}
+                   login={props.login}
+                   password={props.password}
+        />
         <UsersTable/>
 
         <div>
@@ -18,6 +21,8 @@ let Users = (props) => {
                                        currentPage={props.currentPage}
                                        onDeleteUser={props.onDeleteUser}
                                        onUpdateUser={props.onUpdateUser}
+                                       login={props.login}
+                                       password={props.password}
                 />
             )}</div>
 
@@ -25,7 +30,10 @@ let Users = (props) => {
         <Paginator currentPage={props.currentPage}
                    onPageChanged={props.onPageChanged}
                    totalCount={props.totalCount}
-                   pageSize={props.pageSize}/>
+                   pageSize={props.pageSize}
+                   login={props.login}
+                   password={props.password}
+        />
     </div>
 }
 

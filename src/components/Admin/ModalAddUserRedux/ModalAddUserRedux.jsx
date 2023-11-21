@@ -38,7 +38,7 @@ const ModalAddUserRedux = (props) => {
     const handleClose = () => setOpen(false);
 
     const onSubmit = (data) => {
-        props.onAddUser(props.currentPage, props.pageSize, data.firstname);
+        props.onAddUser(props.login, props.password, props.currentPage, props.pageSize, data.firstname);
         handleClose();
     };
 

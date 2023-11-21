@@ -79,25 +79,25 @@ export const requestUsers = (login, password, page, pageSize, firstname) => asyn
             const response = await usersAPI.getUsers(login, password, page, pageSize, firstname)
             // console.log("login-pass" + login + "  " + password)
             console.log("result data: " + response.data)
+            dispatch(toggleIsFetching(false));
             if (response.data && response.resultCode === 0) {
-                dispatch(toggleIsFetching(false));
                 console.log("result users: " + response.resultCode)
-                // dispatch(setBD(data.items));
-                // dispatch(setTotalUserCount(data.totalCount));
+                dispatch(setBD(response.data));
+                dispatch(setTotalUserCount(response.totalCount));
             }
         } catch (error) {
             console.log(error);
         }
 }
 
-export const requestAddUsers = (page, pageSize, firstname) => {
+export const requestAddUsers = (login, password, page, pageSize, firstname) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         dispatch(setCurrentPage(page));
         try {
-            usersAPI.addUsers(page, pageSize, firstname).then(data => {
+            usersAPI.addUsers(login, password, page, pageSize, firstname).then(data => {
                 dispatch(toggleIsFetching(false));
-                dispatch(setBD(data.items));
+                dispatch(setBD(data.data));
                 dispatch(setTotalUserCount(data.totalCount));
             })
         } catch (error) {
@@ -106,14 +106,14 @@ export const requestAddUsers = (page, pageSize, firstname) => {
     }
 }
 
-export const requestDeleteUsers = (page, pageSize, firstname, id) => {
+export const requestDeleteUsers = (login, password, page, pageSize, firstname, id) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         dispatch(setCurrentPage(page));
         try {
-            usersAPI.deleteUsers(page, pageSize, firstname, id).then(data => {
+            usersAPI.deleteUsers(login, password, page, pageSize, firstname, id).then(data => {
                 dispatch(toggleIsFetching(false));
-                dispatch(setBD(data.items));
+                dispatch(setBD(data.data));
                 dispatch(setTotalUserCount(data.totalCount));
             })
         } catch (error) {
@@ -122,14 +122,14 @@ export const requestDeleteUsers = (page, pageSize, firstname, id) => {
     }
 }
 
-export const requestUpdateUsers = (page, pageSize, firstname, id) => {
+export const requestUpdateUsers = (login, password, page, pageSize, firstname, id) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
         dispatch(setCurrentPage(page));
         try {
-            usersAPI.updateUsers(page, pageSize, firstname, id).then(data => {
+            usersAPI.updateUsers(login, password, page, pageSize, firstname, id).then(data => {
                 dispatch(toggleIsFetching(false));
-                dispatch(setBD(data.items));
+                dispatch(setBD(data.data));
                 dispatch(setTotalUserCount(data.totalCount));
             })
         } catch (error) {

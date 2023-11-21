@@ -50,13 +50,10 @@ export const authAPI = {
 
 export const usersAPI = {
     async getUsers(login, password, currentPage = 1, pageSize = 10, firstname = '') {
-        // login = 'Daniel';
-        // password = 'danielTOVARKA';
-
-        const basicAuthCredentials = btoa(`${login}:${password}`);
-        console.log("login-pass: " + login + "  " + password)
+        // console.log("login-pass: " + login + "  " + password)
         const find = 'firstname=' + firstname
 
+        const basicAuthCredentials = btoa(`${login}:${password}`);
         const instance = axios.create({
             withCredentials: true,
             baseURL: baseURL,
@@ -73,9 +70,16 @@ export const usersAPI = {
         }
     },
 
-    async addUsers(currentPage = 1, pageSize = 10, firstname: string) {
-        // const basicAuthCredentials = btoa(`${login}:${password}`);
-
+    async addUsers(login, password, currentPage = 1, pageSize = 10, firstname: string) {
+        const basicAuthCredentials = btoa(`${login}:${password}`);
+        const instance = axios.create({
+            withCredentials: true,
+            baseURL: baseURL,
+            headers: {
+                'Authorization': `Basic ${basicAuthCredentials}`,
+            },
+        })
+        
         try {
             const response = await instance.post(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`, {
                 firstname: firstname
@@ -86,8 +90,15 @@ export const usersAPI = {
         }
     },
 
-    async deleteUsers(currentPage = 1, pageSize = 10, firstname: string, id: string) {
-        // const basicAuthCredentials = btoa(`${login}:${password}`);
+    async deleteUsers(login, password, currentPage = 1, pageSize = 10, firstname: string, id: string) {
+        const basicAuthCredentials = btoa(`${login}:${password}`);
+        const instance = axios.create({
+            withCredentials: true,
+            baseURL: baseURL,
+            headers: {
+                'Authorization': `Basic ${basicAuthCredentials}`,
+            },
+        })
 
         endpoint = id;
         try {
@@ -98,8 +109,15 @@ export const usersAPI = {
         }
     },
 
-    async updateUsers(currentPage = 1, pageSize = 10, firstname: string, id: string) {
-        // const basicAuthCredentials = btoa(`${login}:${password}`);
+    async updateUsers(login, password, currentPage = 1, pageSize = 10, firstname: string, id: string) {
+        const basicAuthCredentials = btoa(`${login}:${password}`);
+        const instance = axios.create({
+            withCredentials: true,
+            baseURL: baseURL,
+            headers: {
+                'Authorization': `Basic ${basicAuthCredentials}`,
+            },
+        })
 
         endpoint = endpoint + id;
         const dataUpdate = {

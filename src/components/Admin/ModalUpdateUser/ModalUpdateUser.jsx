@@ -41,7 +41,7 @@ const ModalUpdateUser = (props) => {
 
     const onSubmit = (formData) => {
         // alert(formData.firstnameUpdate);
-        props.onUpdateUser(props.currentPage, props.pageSize, formData.firstnameUpdate, props.selectedID)
+        props.onUpdateUser(props.login, props.password, props.currentPage, props.pageSize, formData.firstnameUpdate, props.selectedID)
         closeModal();
     };
 

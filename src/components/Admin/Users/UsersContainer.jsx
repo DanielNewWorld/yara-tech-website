@@ -34,12 +34,16 @@ class UsersAPIComponent extends React.Component {
                         onAddUser={this.props.addUserThunkCreator}
                         pageSize={this.props.pageSize}
                         currentPage={this.props.currentPage}
+                        login={this.props.login}
+                        password={this.props.password}
                     />
 
                     <FindUser
                         onGetUser={this.props.getUsersThunkCreator}
                         pageSize={this.props.pageSize}
                         currentPage={this.props.currentPage}
+                        login={this.props.login}
+                        password={this.props.password}
                     />
                 </div>
 
@@ -51,6 +55,8 @@ class UsersAPIComponent extends React.Component {
                        data={this.props.data}
                        onDeleteUser={this.props.deleteUsersThunkCreator}
                        onUpdateUser={this.props.updateUsersThunkCreator}
+                       login={this.props.login}
+                       password={this.props.password}
                 />
         </div>
     }
