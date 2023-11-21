@@ -56,12 +56,12 @@ export const login = (login, password, rememberMe) => async (dispatch) => {
 export const logout = () => {
     return (dispatch) => {
         try {
-            const response = authAPI.logout().then(data => {
+            // const response = authAPI.logout().then(data => {
                 // console.log("items: " + data.items[0].id)
-                if (response.data && response.data.resultCode === 0) {
+                // if (response.data && response.data.resultCode === 0) {
                     dispatch(setAuthAdminData(null, null, null, false))
-                }
-            })
+                // }
+            // })
         } catch (error) {
             console.log(error);
         }

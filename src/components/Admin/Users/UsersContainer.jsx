@@ -13,6 +13,8 @@ import {getCurrentPage, getIsFetching, getPageSize, getTotalUsersCount, getUsers
 import FindUser from "../ModalFindUser/FindUser";
 import styleCSS from './User.module.css';
 import ModalAddUserRedux from "../ModalAddUserRedux/ModalAddUserRedux";
+import Logout from "../Logout/Logout";
+import {logout} from "../../../redux/auth-reducer";
 
 class UsersAPIComponent extends React.Component {
     componentDidMount() {
@@ -42,6 +44,12 @@ class UsersAPIComponent extends React.Component {
                         onGetUser={this.props.getUsersThunkCreator}
                         pageSize={this.props.pageSize}
                         currentPage={this.props.currentPage}
+                        login={this.props.login}
+                        password={this.props.password}
+                    />
+
+                    <Logout
+                        onLogout={this.props.logout}
                         login={this.props.login}
                         password={this.props.password}
                     />
@@ -80,7 +88,8 @@ export default compose(
         addUserThunkCreator: requestAddUsers,
         getUsersThunkCreator: requestUsers,
         deleteUsersThunkCreator: requestDeleteUsers,
-        updateUsersThunkCreator: requestUpdateUsers
+        updateUsersThunkCreator: requestUpdateUsers,
+        logout
     })
     //,
     //withAuthRedirect

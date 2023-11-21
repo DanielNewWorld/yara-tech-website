@@ -1,15 +1,28 @@
 import React, {Suspense} from 'react';
 import UsersContainer from "../Users/UsersContainer";
 import Preloader from "../../Common/Preloader/Preloader";
+import {Navigate} from "react-router-dom";
+import {connect} from "react-redux";
+import {login} from "../../../redux/auth-reducer";
 
-const AdminPanel = () => {
-    return (
-        <div>
-            <Suspense fallback={<div><Preloader/></div>}>
-                <UsersContainer/>
-            </Suspense>
-        </div>
-    );
+const AdminPanel = (props) => {
+    if (props.isAuth) {
+        return (
+            <div>
+                <Suspense fallback={<div><Preloader/></div>}>
+                    <UsersContainer/>
+                </Suspense>
+            </div>
+        );
+    } else {
+        return <Navigate to={"/login"} replace={true}/>
+    }
 };
 
-export default AdminPanel;
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
+
+export default connect (mapStateToProps, {})(AdminPanel)
+
+// export default AdminPanel;

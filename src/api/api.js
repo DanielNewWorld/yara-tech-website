@@ -1,23 +1,6 @@
 import axios from "axios";
 
-export const username = 'Daniel';
-export const password = 'danielTOVARKA';
-const basicAuthCredentials = btoa(`${username}:${password}`);
-
-export type UserCreateModel = {
-    firstname: string
-}
-
 const baseURL = 'https://main--warm-phoenix-949f5d.netlify.app/api';
-let endpoint = "/"
-
-const instance = axios.create({
-    withCredentials: true,
-    baseURL: baseURL,
-    headers: {
-        'Authorization': `Basic ${basicAuthCredentials}`,
-    },
-})
 
 export const authAPI = {
     async me(login, password) {
@@ -119,7 +102,7 @@ export const usersAPI = {
             },
         })
 
-        endpoint = endpoint + id;
+        const endpoint = "/" + id;
         const dataUpdate = {
             firstname: firstname,
         };
