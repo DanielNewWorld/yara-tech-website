@@ -64,7 +64,7 @@ export const usersAPI = {
         })
         
         try {
-            const response = await instance.post(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`, {
+            const response = await instance.post(`?page=${currentPage}&pageSize=${pageSize}`, {
                 firstname: firstname
             });
             return response.data;
@@ -83,9 +83,8 @@ export const usersAPI = {
             },
         })
 
-        endpoint = id;
         try {
-            const response = await instance.delete(`${endpoint}?page=${currentPage}&pageSize=${pageSize}`);
+            const response = await instance.delete(`${id}?page=${currentPage}&pageSize=${pageSize}`);
             return response.data;
         } catch (error) {
             console.error('Error:', error);
